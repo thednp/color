@@ -33,7 +33,7 @@ Object.assign(myElement.style, { color: myHEXColor.toString() });
 
 ### Wiki
 
-For a more detailed guide please visit the wiki page at [Color Wiki](https://github.com/thednp/color/Color-Wiki)!
+For a more detailed guide please visit the wiki page at [Color Wiki](https://github.com/thednp/color/wiki/Color-Wiki)!
 
 ### Thanks
 
