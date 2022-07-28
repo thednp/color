@@ -946,6 +946,14 @@ describe("Color Class Tests", () => {
     expect(black.toHwbString()).to.equal("hwb(0deg 0% 100%)");
   });
 
+  it("Test Color.get.name", () => {
+    expect(new Color("rgb(255, 255, 255)").name).to.equal("white");
+    expect(new Color("rgb(0, 0, 0)").name).to.equal("black");
+    expect(new Color("rgb(39, 82, 201)").name).to.equal("royalblue");
+    expect(new Color("rgb(99, 39, 201)").name).to.equal("blueviolet");
+    expect(new Color("rgb(201, 39, 156)").name).to.equal("mediumvioletred");
+  });
+
   it("Test grey tints with all formats", () => {
     // darkish grey
     const rgbcolor = new Color("rgba(51,51,51,0.8)");

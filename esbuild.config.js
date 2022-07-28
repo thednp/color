@@ -18,7 +18,7 @@ const YEAR = new Date().getFullYear();
 const banner = `/*!
 * ${NAME} v${pkg.version} (${pkg.homepage})
 * Copyright ${YEAR} © ${pkg.author}
-* Licensed under MIT (https://github.com/thednp/color-picker/blob/master/LICENSE)
+* Licensed under MIT (${pkg.homepage}/blob/main/LICENSE)
 */`;
 
 const miniBanner = `// ${NAME} v${pkg.version} | ${pkg.author} © ${YEAR} | ${pkg.license}-License`;

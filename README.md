@@ -9,7 +9,12 @@
 [![typescript version](https://img.shields.io/badge/typescript-4.7.4-brightgreen)](https://www.typescriptlang.org/)
 [![esbuild version](https://img.shields.io/badge/esbuild-0.14.30-brightgreen)](https://esbuild.github.io/)
 
-A TypeScript flavored fork of the excelent [TinyColor](https://github.com/bgrins/TinyColor) optimized for [ColorPicker](https://github.com/thednp/color-picker) and features an improved permissive regular expressions, new features as well as a small new utility to convert web safe colors to RGB.
+A TypeScript flavored fork of the excelent [TinyColor](https://github.com/bgrins/TinyColor) optimized for [ColorPicker](https://github.com/thednp/color-picker) with new features and improvements:
+
+- added support for HWB(a) colors (Hue, Whiteness, Blackness);
+- improved regular expressions;
+- slightly faster performance;
+- stronger and more strict types.
 
 ### Install
 

@@ -1,8 +1,8 @@
 "use strict";
 /*!
-* Color v0.0.1 (http://github.com/thednp/color)
+* Color v1.0.0 (http://github.com/thednp/color)
 * Copyright 2022 © thednp
-* Licensed under MIT (https://github.com/thednp/color-picker/blob/master/LICENSE)
+* Licensed under MIT (http://github.com/thednp/color/blob/main/LICENSE)
 */
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;

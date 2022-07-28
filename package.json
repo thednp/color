@@ -1,7 +1,7 @@
 {
   "name": "@thednp/color",
   "author": "thednp",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "🎨 Fast color conversion tool made in TypeScript",
   "keywords": [
     "color",
