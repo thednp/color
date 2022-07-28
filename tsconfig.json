@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "ESNext"],
+    "allowJs": true,
+    "target": "ESNext",
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "alwaysStrict": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "removeComments": true,
+    "module": "ESNext",
+    "baseUrl": "./"
+    // "resolveJsonModule": true,
+    // "inlineSourceMap": true,
+    // "moduleResolution": "Node",
+    // "outDir": "./types"
+    // "outFile": "./types/index.d.ts"
+  },
+  "include": ["src/*", "src/**/*"],
+  "exclude": ["node_modules"]
+}

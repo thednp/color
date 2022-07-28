@@ -1,0 +1,61 @@
+{
+  "name": "@thednp/color",
+  "author": "thednp",
+  "version": "0.0.1",
+  "description": "🎨 Fast color conversion tool made in TypeScript",
+  "keywords": [
+    "color",
+    "manipulate",
+    "typescript"
+  ],
+  "homepage": "http://github.com/thednp/color",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.cjs.js",
+  "esmodule": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thednp/color.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "license": "MIT",
+  "scripts": {
+    "pre-test": "npm run clean-coverage && npx tsc",
+    "test": "npm run pre-test && cypress run",
+    "clean": "del-cli --force dist",
+    "clean-coverage": "del-cli --force coverage .nyc_output",
+    "cypress": "npm run pre-test && npx cypress open",
+    "coverage:report": "nyc report --reporter=lcov --reporter=json --reporter=text --reporter=json-summary",
+    "lint:ts": "npx eslint src/",
+    "fix:ts": "npx eslint src/ --fix",
+    "build": "npm run clean && npm-run-all --parallel build-*",
+    "build:ts": "del-cli --force ./types && tsc -d --removeComments --emitDeclarationOnly --declarationMap --outDir ./types",
+    "build-js": "node esbuild.config.js FORMAT:iife",
+    "build-minjs": "node esbuild.config.js MIN:true FORMAT:iife",
+    "build-esm": "node esbuild.config.js",
+    "build-minesm": "node esbuild.config.js MIN:true",
+    "build-mod": "node esbuild.config.js FORMAT:cjs",
+    "build-minmod": "node esbuild.config.js MIN:true FORMAT:cjs"
+  },
+  "devDependencies": {
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.3",
+    "@cypress/code-coverage": "^3.10.0",
+    "@types/istanbul-lib-instrument": "^1.7.4",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "cypress": "^10.3.1",
+    "esbuild": "^0.14.30",
+    "eslint": "^8.20.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "istanbul-lib-coverage": "^3.2.0",
+    "istanbul-lib-instrument": "^5.2.0",
+    "npm-run-all": "^4.1.5",
+    "nyc": "^15.1.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
+  }
+}
