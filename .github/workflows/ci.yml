@@ -18,7 +18,7 @@ jobs:
       - uses: bahmutov/npm-install@v1
       - run: npm run lint:ts
       - run: npm run build-esm
-      - run: npm run test
+      - run: npx cypress run
 
       - name: Upload coverage report on Node v${{ matrix.node }} to coveralls.io...
         uses: coverallsapp/github-action@v1.1.2
