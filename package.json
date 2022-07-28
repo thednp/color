@@ -1,7 +1,7 @@
 {
   "name": "@thednp/color",
   "author": "thednp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "🎨 Fast color conversion tool made in TypeScript",
   "keywords": [
     "color",
@@ -10,9 +10,10 @@
   ],
   "homepage": "http://github.com/thednp/color",
   "source": "src/index.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.cjs.js",
+  "main": "src/index.ts",
+  "esnext": "src/index.js",
   "esmodule": "dist/index.js",
+  "module": "dist/index.cjs.js",
   "types": "types/index.d.ts",
   "repository": {
     "type": "git",

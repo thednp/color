@@ -14,6 +14,7 @@ A TypeScript flavored fork of the excelent [TinyColor](https://github.com/bgrins
 - added support for HWB(a) colors (Hue, Whiteness, Blackness);
 - added support for CSS4 Color module (`rgb(40 74 200 / 90%)`, `hsl(227deg 67% 47% / 90%)`)
 - improved regular expressions;
+- tree shaking;
 - slightly faster performance;
 - stronger and more strict types.
 

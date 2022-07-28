@@ -1,5 +1,5 @@
 /*!
-* Color v1.0.0 (http://github.com/thednp/color)
+* Color v1.0.1 (http://github.com/thednp/color)
 * Copyright 2022 © thednp
 * Licensed under MIT (http://github.com/thednp/color/blob/main/LICENSE)
 */
