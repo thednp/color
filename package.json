@@ -13,7 +13,7 @@
   "main": "dist/index.js",
   "module": "dist/index.cjs.js",
   "esmodule": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "types": "types/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thednp/color.git"
