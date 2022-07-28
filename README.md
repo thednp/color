@@ -1,5 +1,13 @@
 ## Color
 
+[![Coverage Status](https://coveralls.io/repos/github/thednp/color/badge.svg)](https://coveralls.io/github/thednp/color)
+[![ci](https://github.com/thednp/color/actions/workflows/ci.yml/badge.svg)](https://github.com/thednp/color/actions/workflows/ci.yml)
+[![NPM Version](https://img.shields.io/npm/v/@thednp/color.svg)](https://www.npmjs.com/package/@thednp/color)
+[![NPM Downloads](https://img.shields.io/npm/dm/@thednp/color.svg)](http://npm-stat.com/charts.html?package=@thednp/color)
+[![jsDeliver](https://img.shields.io/jsdelivr/npm/hw/@thednp/color)](https://www.jsdelivr.com/package/npm/@thednp/color)
+![cypress version](https://img.shields.io/badge/cypress-9.7.0-brightgreen)
+![typescript version](https://img.shields.io/badge/typescript-4.5.2-brightgreen)
+
 A TypeScript flavored fork of the excelent [TinyColor](https://github.com/bgrins/TinyColor) optimized for [ColorPicker](https://github.com/thednp/color-picker) and features an improved permissive regular expressions, new features as well as a small new utility to convert web safe colors to RGB.
 
 ### Install
@@ -24,7 +32,7 @@ Object.assign(myElement.style, { color: myHEXColor.toString() });
 
 ### Wiki
 
-For a more detailed guide please visit the wiki page at [Color Wiki](https://github.com/thednp/color/wiki)!
+For a more detailed guide please visit the wiki page at [Color Wiki](https://github.com/thednp/color/Color-Wiki)!
 
 ### Thanks
 
