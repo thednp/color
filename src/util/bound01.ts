@@ -1,5 +1,5 @@
-import isOnePointZero from "src/util/isOnePointZero";
-import isPercentage from "src/util/isPercentage";
+import isOnePointZero from "./isOnePointZero";
+import isPercentage from "./isPercentage";
 /**
  * Take input from [0, n] and return it as [0, 1]
  */

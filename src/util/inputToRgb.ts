@@ -33,7 +33,7 @@ import hwbToRgb from "../convert/hwbToRgb";
  * "hwb(0deg, 100%, 100%, 100%)" or "hwb 0 100% 100% 0.1" // CSS4 Module
  * ```
  */
-export default function inputToRGB(input: ColorInputTypes): RGBAObject {
+export default function inputToRGB(input?: ColorInputTypes): RGBAObject {
   let rgb = { r: 0, g: 0, b: 0 };
   let color = input;
   let a = 1;

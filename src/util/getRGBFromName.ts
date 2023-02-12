@@ -1,4 +1,4 @@
-import RGB from "src/interface/rgb";
+import RGB from "../interface/rgb";
 import webColors from "./webColors";
 
 /**

@@ -46,7 +46,7 @@ export default class Color {
   public a: number;
   public format: string;
   public ok: boolean;
-  public originalInput: string | Color | ColorInputTypes;
+  public originalInput?: string | Color | ColorInputTypes;
 
   constructor(input?: ColorInputTypes | Partial<Color>, config?: ColorFormats) {
     const configFormat = config && COLOR_FORMAT.includes(config) ? config : "";
@@ -120,14 +120,17 @@ export default class Color {
     const { r, g, b } = this.toRgb();
     const [colorName] = webColors
       .map(([name, rgb]): [string, number] => {
-        const distance = Math.sqrt(
-          (rgb.r - r) ** 2 + (rgb.g - g) ** 2 + (rgb.b - b) ** 2
-        );
+        const distance =
+          // ((rgb.r - r) ** 2 + (rgb.g - g) ** 2 + (rgb.b - b) ** 2) ** 0.5; // standard
+          (((rgb.r - r) * 0.3) ** 2 +
+            ((rgb.g - g) * 0.6) ** 2 +
+            ((rgb.b - b) * 0.1) ** 2) **
+          0.5; // perceived
         return [name, distance];
       })
-      .find(([, distance], i, ar) => {
+      .find(([, distance], _, ar) => {
         return distance === Math.min(...ar.map(([, d]) => d));
-      });
+      }) as [string, number];
 
     return colorName;
   }
