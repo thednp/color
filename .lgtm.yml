@@ -7,4 +7,3 @@ extraction:
         - experiments
         - cypress
         - dist
-        - docs
