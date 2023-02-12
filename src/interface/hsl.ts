@@ -1,4 +1,4 @@
-export default interface HSL {
+export interface HSL {
   h: number;
   s: number;
   l: number;

@@ -1,9 +1,9 @@
-import HSV from "src/interface/hsv";
+import type { HSV } from '../interface/hsv';
 
 /**
  * Converts an RGB colour value to HSV.
  */
-export default function rgbToHsv(r: number, g: number, b: number): HSV {
+const rgbToHsv = (r: number, g: number, b: number): HSV => {
   const max = Math.max(r, g, b);
   const min = Math.min(r, g, b);
   let h = 0;
@@ -20,4 +20,6 @@ export default function rgbToHsv(r: number, g: number, b: number): HSV {
     h /= 6;
   }
   return { h, s, v };
-}
+};
+
+export default rgbToHsv;

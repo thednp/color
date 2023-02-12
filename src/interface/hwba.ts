@@ -1,6 +1,5 @@
-import HWB from "./hwb";
+import { HWB } from './hwb';
 
-interface HWBA extends HWB {
+export interface HWBA extends HWB {
   a: number;
 }
-export default HWBA;

@@ -1,4 +1,4 @@
-export default interface HSVALike {
+export interface HSVALike {
   h: number | string;
   s: number | string;
   v: number | string;

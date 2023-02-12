@@ -1,5 +1,5 @@
-import HSV from "./hsv";
+import { HSV } from './hsv';
 
-export default interface HSVA extends HSV {
+export interface HSVA extends HSV {
   a: number;
 }

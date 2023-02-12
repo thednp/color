@@ -10,7 +10,7 @@
   ],
   "homepage": "http://github.com/thednp/color",
   "source": "./src/index.ts",
-  "main": "./src/index.ts",
+  "main": "./dist/index.js",
   "esnext": "./dist/index.mjs",
   "esmodule": "./dist/index.mjs",
   "module": "./dist/index.cjs",

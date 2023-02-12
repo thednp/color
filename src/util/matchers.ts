@@ -1,12 +1,12 @@
 // Hue angles
-const ANGLES = "deg|rad|grad|turn";
+const ANGLES = 'deg|rad|grad|turn';
 
 // <http://www.w3.org/TR/css3-values/#integers>
-const CSS_INTEGER = "[-\\+]?\\d+%?";
+const CSS_INTEGER = '[-\\+]?\\d+%?';
 
 // Include CSS3 Module
 // <http://www.w3.org/TR/css3-values/#number-value>
-const CSS_NUMBER = "[-\\+]?\\d*\\.\\d+%?";
+const CSS_NUMBER = '[-\\+]?\\d*\\.\\d+%?';
 
 // Include CSS4 Module Hue degrees unit
 // <https://www.w3.org/TR/css3-values/#angle-value>
@@ -19,11 +19,11 @@ const CSS_UNIT = `(?:${CSS_NUMBER})|(?:${CSS_INTEGER})`;
 const CSS_UNIT2 = `(?:${CSS_UNIT})|(?:${CSS_ANGLE}?)`;
 
 // Start & end
-const START_MATCH = "(?:[\\s|\\(\\s|\\s\\(\\s]+)?";
-const END_MATCH = "(?:[\\s|\\)\\s]+)?";
+const START_MATCH = '(?:[\\s|\\(\\s|\\s\\(\\s]+)?';
+const END_MATCH = '(?:[\\s|\\)\\s]+)?';
 // Components separation
-const SEP = "(?:[,|\\s]+)";
-const SEP2 = "(?:[,|\\/\\s]*)?";
+const SEP = '(?:[,|\\s]+)';
+const SEP2 = '(?:[,|\\/\\s]*)?';
 
 // Actual matching.
 // Parentheses and commas are optional, but not required.

@@ -1,9 +1,9 @@
-import RGB from "../interface/rgb";
+import { RGB } from '../interface/rgb';
 
 /**
  * Converts an HSV colour value to RGB.
  */
-export default function hsvToRgb(H: number, S: number, V: number): RGB {
+const hsvToRgb = (H: number, S: number, V: number): RGB => {
   const h = H * 6;
   const s = S;
   const v = V;
@@ -17,4 +17,6 @@ export default function hsvToRgb(H: number, S: number, V: number): RGB {
   const g = [t, v, v, q, p, p][mod];
   const b = [p, p, t, v, v, q][mod];
   return { r, g, b };
-}
+};
+
+export default hsvToRgb;

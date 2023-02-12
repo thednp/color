@@ -1,39 +1,37 @@
-import RGBALike from "src/interface/rgbaLike";
-import HSLALike from "src/interface/hslaLike";
-import HWBALike from "src/interface/hwbaLike";
-import HSVALike from "src/interface/hsvaLike";
+import isColorName from './isColorName';
+import isNonColor from './isNonColor';
+import getRGBFromName from './getRGBFromName';
+import matchers from './matchers';
+import parseIntFromHex from '../convert/parseIntFromHex';
+import convertHexToDecimal from '../convert/convertHexToDecimal';
 
-import isColorName from "./isColorName";
-import isNonColor from "./isNonColor";
-import getRGBFromName from "./getRGBFromName";
-import matchers from "./matchers";
-import parseIntFromHex from "../convert/parseIntFromHex";
-import convertHexToDecimal from "../convert/convertHexToDecimal";
+import type { RGBALike } from '../interface/rgbaLike';
+import type { HSLALike } from '../interface/hslaLike';
+import type { HWBALike } from '../interface/hwbaLike';
+import type { HSVALike } from '../interface/hsvaLike';
 
 /**
  * Permissive string parsing. Take in a number of formats, and output an object
  * based on detected format. Returns {r,g,b} or {h,s,l} or {h,s,v}
  */
-export default function stringInputToObject(
-  input?: string
-): RGBALike | HSLALike | HSVALike | HWBALike {
+const stringInputToObject = (input?: string): RGBALike | HSLALike | HSVALike | HWBALike => {
   const color: string = String(input).trim().toLowerCase();
 
   if (isColorName(color)) {
     return Object.assign(getRGBFromName(color), {
       a: 1,
-      format: "rgb",
+      format: 'rgb',
       ok: true,
     });
   }
   if (isNonColor(color)) {
-    const a = color === "transparent" ? 0 : 1;
+    const a = color === 'transparent' ? 0 : 1;
     return {
       r: 0,
       g: 0,
       b: 0,
       a,
-      format: "rgb",
+      format: 'rgb',
       ok: true,
     };
   }
@@ -50,7 +48,7 @@ export default function stringInputToObject(
       g: m2,
       b: m3,
       a: m4 !== undefined ? m4 : 1,
-      format: "rgb",
+      format: 'rgb',
       ok: true,
     };
   }
@@ -62,7 +60,7 @@ export default function stringInputToObject(
       s: m2,
       l: m3,
       a: m4 !== undefined ? m4 : 1,
-      format: "hsl",
+      format: 'hsl',
       ok: true,
     };
   }
@@ -74,7 +72,7 @@ export default function stringInputToObject(
       s: m2,
       v: m3,
       a: m4 !== undefined ? m4 : 1,
-      format: "hsv",
+      format: 'hsv',
       ok: true,
     };
   }
@@ -86,7 +84,7 @@ export default function stringInputToObject(
       w: m2,
       b: m3,
       a: m4 !== undefined ? m4 : 1,
-      format: "hwb",
+      format: 'hwb',
       ok: true,
     };
   }
@@ -98,7 +96,7 @@ export default function stringInputToObject(
       g: parseIntFromHex(m2),
       b: parseIntFromHex(m3),
       a: convertHexToDecimal(m4),
-      format: "hex",
+      format: 'hex',
       ok: true,
     };
   }
@@ -110,7 +108,7 @@ export default function stringInputToObject(
       g: parseIntFromHex(m2),
       b: parseIntFromHex(m3),
       a: 1,
-      format: "hex",
+      format: 'hex',
       ok: true,
     };
   }
@@ -122,7 +120,7 @@ export default function stringInputToObject(
       g: parseIntFromHex(m2 + m2),
       b: parseIntFromHex(m3 + m3),
       a: convertHexToDecimal(m4 + m4),
-      format: "hex",
+      format: 'hex',
       ok: true,
     };
   }
@@ -134,7 +132,7 @@ export default function stringInputToObject(
       g: parseIntFromHex(m2 + m2),
       b: parseIntFromHex(m3 + m3),
       a: 1,
-      format: "hex",
+      format: 'hex',
       ok: true,
     };
   }
@@ -144,7 +142,9 @@ export default function stringInputToObject(
     g: 0,
     b: 0,
     a: 1,
-    format: "rgb",
+    format: 'rgb',
     ok: !input ? true : false,
   };
-}
+};
+
+export default stringInputToObject;

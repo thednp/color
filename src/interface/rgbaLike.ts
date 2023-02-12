@@ -1,4 +1,4 @@
-export default interface RGBALike {
+export interface RGBALike {
   r: number | string;
   g: number | string;
   b: number | string;

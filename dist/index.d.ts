@@ -1,35 +1,3 @@
-export interface RGB {
-	r: number;
-	g: number;
-	b: number;
-}
-export interface RGBA extends RGB {
-	a: number;
-}
-export interface HSL {
-	h: number;
-	s: number;
-	l: number;
-}
-export interface HSLA extends HSL {
-	a: number;
-}
-export interface HSV {
-	h: number;
-	s: number;
-	v: number;
-}
-export interface HSVA extends HSV {
-	a: number;
-}
-export interface HWB {
-	h: number;
-	w: number;
-	b: number;
-}
-export interface HWBA extends HWB {
-	a: number;
-}
 export type ColorFormats = string | "rgb" | "hex" | "hex3" | "hex4" | "hex6" | "hex8" | "hsl" | "hsv" | "hwb";
 export interface HSLALike {
 	h: number | string;
@@ -64,11 +32,96 @@ export interface RGBALike {
 	ok: boolean;
 }
 export type ColorInputTypes = string | Partial<RGBALike | HSVALike | HSLALike | HWBALike>;
+export interface RGB {
+	r: number;
+	g: number;
+	b: number;
+}
+export interface RGBA extends RGB {
+	a: number;
+}
+export interface HSL {
+	h: number;
+	s: number;
+	l: number;
+}
+export interface HSLA extends HSL {
+	a: number;
+}
+export interface HSV {
+	h: number;
+	s: number;
+	v: number;
+}
+export interface HSVA extends HSV {
+	a: number;
+}
+export interface HWB {
+	h: number;
+	w: number;
+	b: number;
+}
+export interface HWBA extends HWB {
+	a: number;
+}
+export interface RGBAObject extends RGBA {
+	ok: boolean;
+	format: string;
+}
 /**
  * Returns a new `Color` instance.
+ *
  * @see https://github.com/bgrins/TinyColor
  */
 export default class Color {
+	static matchers: {
+		CSS_UNIT: RegExp;
+		ANGLES: string;
+		CSS_ANGLE: string;
+		CSS_INTEGER: string;
+		CSS_NUMBER: string;
+		CSS_UNIT2: string;
+		PERMISSIVE_MATCH: string;
+		hwb: RegExp;
+		rgb: RegExp;
+		hsl: RegExp;
+		hsv: RegExp;
+		hex3: RegExp;
+		hex6: RegExp;
+		hex4: RegExp;
+		hex8: RegExp;
+	};
+	static isOnePointZero: (n: string | number) => boolean;
+	static isPercentage: (n: string | number) => boolean;
+	static isValidCSSUnit: (comp: string | number) => boolean;
+	static isNonColor: <T extends string>(str: T) => boolean;
+	static isColorName: (color: string) => color is "transparent" | "inherit" | "currentColor" | "revert" | "initial";
+	static isColorType: <T extends object>(obj: unknown, inst: T) => obj is T;
+	static pad2: (c: string) => string;
+	static clamp01: (v: number) => number;
+	static bound01: (N: string | number, max: number) => number;
+	static boundAlpha: (a: string | number) => number;
+	static getRGBFromName: (name: string) => RGB;
+	static convertHexToDecimal: (h: string) => number;
+	static convertDecimalToHex: (d: number) => string;
+	static rgbToHsl: (r: number, g: number, b: number) => HSL;
+	static rgbToHex: (r: number, g: number, b: number, allow3Char?: boolean | undefined) => string;
+	static rgbToHsv: (r: number, g: number, b: number) => HSV;
+	static rgbToHwb: (r: number, g: number, b: number) => HWB;
+	static rgbaToHex: (r: number, g: number, b: number, a: number, allow4Char?: boolean | undefined) => string;
+	static hslToRgb: (H: number, S: number, V: number) => RGB;
+	static hsvToRgb: (H: number, S: number, V: number) => RGB;
+	static hueToRgb: (p: number, q: number, t: number) => number;
+	static hwbToRgb: (H: number, W: number, B: number) => RGB;
+	static parseIntFromHex: (val: string) => number;
+	static stringInputToObject: (input?: string | undefined) => HSLALike | HSVALike | HWBALike | RGBALike;
+	static inputToRGB: (input?: ColorInputTypes | undefined) => RGBAObject;
+	static roundPart: (v: number) => number;
+	static webColors: [
+		string,
+		RGB
+	][];
+	static nonColors: string[];
 	r: number;
 	g: number;
 	b: number;
@@ -87,6 +140,7 @@ export default class Color {
 	get isDark(): boolean;
 	/**
 	 * Returns the perceived luminance of a colour.
+	 *
 	 * @see http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
 	 */
 	get luminance(): number;

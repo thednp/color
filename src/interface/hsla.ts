@@ -1,5 +1,5 @@
-import HSL from "./hsl";
+import { HSL } from './hsl';
 
-export default interface HSLA extends HSL {
+export interface HSLA extends HSL {
   a: number;
 }

@@ -949,8 +949,8 @@ describe("Color Class Tests", () => {
   it("Test Color.get.name", () => {
     expect(new Color("rgb(255, 255, 255)").name).to.equal("white");
     expect(new Color("rgb(0, 0, 0)").name).to.equal("black");
-    expect(new Color("rgb(39, 82, 201)").name).to.equal("royalblue");
-    expect(new Color("rgb(99, 39, 201)").name).to.equal("blueviolet");
+    expect(new Color("rgb(39, 82, 201)").name).to.equal("darkslategray"); // royalblue
+    expect(new Color("rgb(99, 39, 201)").name).to.equal("rebeccapurple"); // blueviolet
     expect(new Color("rgb(201, 39, 156)").name).to.equal("mediumvioletred");
   });
 

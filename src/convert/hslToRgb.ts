@@ -1,10 +1,10 @@
-import hueToRgb from "./hueToRgb";
-import RGB from "../interface/rgb";
+import hueToRgb from './hueToRgb';
+import type { RGB } from '../interface/rgb';
 
 /**
  * Converts an HSL colour value to RGB.
  */
-export default function hslToRgb(h: number, s: number, l: number): RGB {
+const hslToRgb = (h: number, s: number, l: number): RGB => {
   let r = 0;
   let g = 0;
   let b = 0;
@@ -23,4 +23,6 @@ export default function hslToRgb(h: number, s: number, l: number): RGB {
   }
 
   return { r, g, b };
-}
+};
+
+export default hslToRgb;

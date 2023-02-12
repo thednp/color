@@ -1,11 +1,14 @@
-import RGB from "../interface/rgb";
-import webColors from "./webColors";
+import webColors from './webColors';
+
+import type { RGB } from '../interface/rgb';
 
 /**
  * Returns the RGB value of a web safe colour.
  */
-export default function getRGBFromName(name: string): RGB {
+const getRGBFromName = (name: string): RGB => {
   const [[, rgbValue]] = webColors.filter(([k]) => k === name.toLowerCase());
 
   return rgbValue;
-}
+};
+
+export default getRGBFromName;

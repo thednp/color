@@ -1,4 +1,4 @@
-export default interface HSV {
+export interface HSV {
   h: number;
   s: number;
   v: number;

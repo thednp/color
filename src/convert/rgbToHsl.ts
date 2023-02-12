@@ -1,9 +1,9 @@
-import HSL from "src/interface/hsl";
+import type { HSL } from '../interface/hsl';
 
 /**
  * Converts an RGB colour value to HSL.
  */
-export default function rgbToHsl(r: number, g: number, b: number): HSL {
+const rgbToHsl = (r: number, g: number, b: number): HSL => {
   const max = Math.max(r, g, b);
   const min = Math.min(r, g, b);
   let h = 0;
@@ -22,4 +22,6 @@ export default function rgbToHsl(r: number, g: number, b: number): HSL {
     h /= 6;
   }
   return { h, s, l };
-}
+};
+
+export default rgbToHsl;

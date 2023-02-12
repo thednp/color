@@ -1,25 +1,22 @@
-import isOnePointZero from "./isOnePointZero";
-import isPercentage from "./isPercentage";
+import isOnePointZero from './isOnePointZero';
+import isPercentage from './isPercentage';
 /**
  * Take input from [0, n] and return it as [0, 1]
  */
-export default function bound01(N: string | number, max: number): number {
+const bound01 = (N: string | number, max: number): number => {
   let n = N;
 
   if (
-    typeof N === "number" &&
+    typeof N === 'number' &&
     Math.min(N, 0) === 0 && // round values to 6 decimals Math.round(N * (10 ** 6)) / 10 ** 6
     Math.max(N, 1) === 1
   )
     return N;
 
-  if (isOnePointZero(N)) n = "100%";
+  if (isOnePointZero(N)) n = '100%';
 
   const processPercent = isPercentage(n);
-  n =
-    max === 360
-      ? parseFloat(n as string)
-      : Math.min(max, Math.max(0, parseFloat(n as string)));
+  n = max === 360 ? parseFloat(n as string) : Math.min(max, Math.max(0, parseFloat(n as string)));
 
   // Automatically convert percentage into number
   if (processPercent) n = (n * max) / 100;
@@ -40,4 +37,6 @@ export default function bound01(N: string | number, max: number): number {
     n = (n % max) / max;
   }
   return n;
-}
+};
+
+export default bound01;

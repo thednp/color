@@ -1,7 +1,7 @@
 /**
  * Returns a normalized RGB component value.
  */
-export default function hueToRgb(p: number, q: number, t: number): number {
+const hueToRgb = (p: number, q: number, t: number): number => {
   let T = t;
   if (T < 0) T += 1;
   if (T > 1) T -= 1;
@@ -9,4 +9,5 @@ export default function hueToRgb(p: number, q: number, t: number): number {
   if (T < 1 / 2) return q;
   if (T < 2 / 3) return p + (q - p) * (2 / 3 - T) * 6;
   return p;
-}
+};
+export default hueToRgb;

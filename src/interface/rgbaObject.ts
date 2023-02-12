@@ -1,6 +1,6 @@
-import RGBA from "./rgba";
+import { RGBA } from './rgba';
 
-export default interface RGBAObject extends RGBA {
+export interface RGBAObject extends RGBA {
   ok: boolean;
   format: string;
 }

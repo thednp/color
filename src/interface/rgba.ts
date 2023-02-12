@@ -1,5 +1,5 @@
-import RGB from "./rgb";
+import { RGB } from './rgb';
 
-export default interface RGBA extends RGB {
+export interface RGBA extends RGB {
   a: number;
 }

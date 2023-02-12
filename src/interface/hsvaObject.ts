@@ -1,6 +1,6 @@
-import HSVA from "./hsva";
+import { HSVA } from './hsva';
 
-export default interface HSVAObject extends HSVA {
+export interface HSVAObject extends HSVA {
   ok: boolean;
   format: string;
 }

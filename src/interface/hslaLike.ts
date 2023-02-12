@@ -1,4 +1,4 @@
-export default interface HSLALike {
+export interface HSLALike {
   h: number | string;
   s: number | string;
   l: number | string;

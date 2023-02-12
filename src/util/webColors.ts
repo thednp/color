@@ -1,4 +1,4 @@
-import RGB from "../interface/rgb";
+import type { RGB } from '../interface/rgb';
 
 /**
  * 148 Web Colors
@@ -6,7 +6,7 @@ import RGB from "../interface/rgb";
  */
 const webColors: [string, RGB][] = [
   [
-    "aliceblue",
+    'aliceblue',
     {
       r: 240,
       g: 248,
@@ -14,7 +14,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "antiquewhite",
+    'antiquewhite',
     {
       r: 250,
       g: 235,
@@ -22,7 +22,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "aqua",
+    'aqua',
     {
       r: 0,
       g: 255,
@@ -30,7 +30,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "aquamarine",
+    'aquamarine',
     {
       r: 127,
       g: 255,
@@ -38,7 +38,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "azure",
+    'azure',
     {
       r: 240,
       g: 255,
@@ -46,7 +46,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "beige",
+    'beige',
     {
       r: 245,
       g: 245,
@@ -54,7 +54,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "bisque",
+    'bisque',
     {
       r: 255,
       g: 228,
@@ -62,7 +62,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "black",
+    'black',
     {
       r: 0,
       g: 0,
@@ -70,7 +70,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "blanchedalmond",
+    'blanchedalmond',
     {
       r: 255,
       g: 235,
@@ -78,7 +78,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "blue",
+    'blue',
     {
       r: 0,
       g: 0,
@@ -86,7 +86,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "blueviolet",
+    'blueviolet',
     {
       r: 138,
       g: 43,
@@ -94,7 +94,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "brown",
+    'brown',
     {
       r: 165,
       g: 42,
@@ -102,7 +102,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "burlywood",
+    'burlywood',
     {
       r: 222,
       g: 184,
@@ -110,7 +110,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "cadetblue",
+    'cadetblue',
     {
       r: 95,
       g: 158,
@@ -118,7 +118,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "chartreuse",
+    'chartreuse',
     {
       r: 127,
       g: 255,
@@ -126,7 +126,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "chocolate",
+    'chocolate',
     {
       r: 210,
       g: 105,
@@ -134,7 +134,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "coral",
+    'coral',
     {
       r: 255,
       g: 127,
@@ -142,7 +142,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "cornflowerblue",
+    'cornflowerblue',
     {
       r: 100,
       g: 149,
@@ -150,7 +150,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "cornsilk",
+    'cornsilk',
     {
       r: 255,
       g: 248,
@@ -158,7 +158,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "crimson",
+    'crimson',
     {
       r: 220,
       g: 20,
@@ -166,7 +166,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "cyan",
+    'cyan',
     {
       r: 0,
       g: 255,
@@ -174,7 +174,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "darkblue",
+    'darkblue',
     {
       r: 0,
       g: 0,
@@ -182,7 +182,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "darkcyan",
+    'darkcyan',
     {
       r: 0,
       g: 139,
@@ -190,7 +190,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "darkgoldenrod",
+    'darkgoldenrod',
     {
       r: 184,
       g: 134,
@@ -198,7 +198,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "darkgray",
+    'darkgray',
     {
       r: 169,
       g: 169,
@@ -206,7 +206,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "darkgreen",
+    'darkgreen',
     {
       r: 0,
       g: 100,
@@ -214,7 +214,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "darkgrey",
+    'darkgrey',
     {
       r: 169,
       g: 169,
@@ -222,7 +222,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "darkkhaki",
+    'darkkhaki',
     {
       r: 189,
       g: 183,
@@ -230,7 +230,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "darkmagenta",
+    'darkmagenta',
     {
       r: 139,
       g: 0,
@@ -238,7 +238,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "darkolivegreen",
+    'darkolivegreen',
     {
       r: 85,
       g: 107,
@@ -246,7 +246,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "darkorange",
+    'darkorange',
     {
       r: 255,
       g: 140,
@@ -254,7 +254,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "darkorchid",
+    'darkorchid',
     {
       r: 153,
       g: 50,
@@ -262,7 +262,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "darkred",
+    'darkred',
     {
       r: 139,
       g: 0,
@@ -270,7 +270,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "darksalmon",
+    'darksalmon',
     {
       r: 233,
       g: 150,
@@ -278,7 +278,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "darkseagreen",
+    'darkseagreen',
     {
       r: 143,
       g: 188,
@@ -286,7 +286,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "darkslateblue",
+    'darkslateblue',
     {
       r: 72,
       g: 61,
@@ -294,7 +294,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "darkslategray",
+    'darkslategray',
     {
       r: 47,
       g: 79,
@@ -302,7 +302,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "darkslategrey",
+    'darkslategrey',
     {
       r: 47,
       g: 79,
@@ -310,7 +310,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "darkturquoise",
+    'darkturquoise',
     {
       r: 0,
       g: 206,
@@ -318,7 +318,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "darkviolet",
+    'darkviolet',
     {
       r: 148,
       g: 0,
@@ -326,7 +326,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "deeppink",
+    'deeppink',
     {
       r: 255,
       g: 20,
@@ -334,7 +334,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "deepskyblue",
+    'deepskyblue',
     {
       r: 0,
       g: 191,
@@ -342,7 +342,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "dimgray",
+    'dimgray',
     {
       r: 105,
       g: 105,
@@ -350,7 +350,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "dimgrey",
+    'dimgrey',
     {
       r: 105,
       g: 105,
@@ -358,7 +358,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "dodgerblue",
+    'dodgerblue',
     {
       r: 30,
       g: 144,
@@ -366,7 +366,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "firebrick",
+    'firebrick',
     {
       r: 178,
       g: 34,
@@ -374,7 +374,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "floralwhite",
+    'floralwhite',
     {
       r: 255,
       g: 250,
@@ -382,7 +382,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "forestgreen",
+    'forestgreen',
     {
       r: 34,
       g: 139,
@@ -390,7 +390,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "fuchsia",
+    'fuchsia',
     {
       r: 255,
       g: 0,
@@ -398,7 +398,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "gainsboro",
+    'gainsboro',
     {
       r: 220,
       g: 220,
@@ -406,7 +406,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "ghostwhite",
+    'ghostwhite',
     {
       r: 248,
       g: 248,
@@ -414,7 +414,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "goldenrod",
+    'goldenrod',
     {
       r: 218,
       g: 165,
@@ -422,7 +422,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "gold",
+    'gold',
     {
       r: 255,
       g: 215,
@@ -430,7 +430,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "gray",
+    'gray',
     {
       r: 128,
       g: 128,
@@ -438,7 +438,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "green",
+    'green',
     {
       r: 0,
       g: 128,
@@ -446,7 +446,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "greenyellow",
+    'greenyellow',
     {
       r: 173,
       g: 255,
@@ -454,7 +454,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "grey",
+    'grey',
     {
       r: 128,
       g: 128,
@@ -462,7 +462,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "honeydew",
+    'honeydew',
     {
       r: 240,
       g: 255,
@@ -470,7 +470,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "hotpink",
+    'hotpink',
     {
       r: 255,
       g: 105,
@@ -478,7 +478,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "indianred",
+    'indianred',
     {
       r: 205,
       g: 92,
@@ -486,7 +486,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "indigo",
+    'indigo',
     {
       r: 75,
       g: 0,
@@ -494,7 +494,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "ivory",
+    'ivory',
     {
       r: 255,
       g: 255,
@@ -502,7 +502,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "khaki",
+    'khaki',
     {
       r: 240,
       g: 230,
@@ -510,7 +510,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "lavenderblush",
+    'lavenderblush',
     {
       r: 255,
       g: 240,
@@ -518,7 +518,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "lavender",
+    'lavender',
     {
       r: 230,
       g: 230,
@@ -526,7 +526,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "lawngreen",
+    'lawngreen',
     {
       r: 124,
       g: 252,
@@ -534,7 +534,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "lemonchiffon",
+    'lemonchiffon',
     {
       r: 255,
       g: 250,
@@ -542,7 +542,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "lightblue",
+    'lightblue',
     {
       r: 173,
       g: 216,
@@ -550,7 +550,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "lightcoral",
+    'lightcoral',
     {
       r: 240,
       g: 128,
@@ -558,7 +558,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "lightcyan",
+    'lightcyan',
     {
       r: 224,
       g: 255,
@@ -566,7 +566,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "lightgoldenrodyellow",
+    'lightgoldenrodyellow',
     {
       r: 250,
       g: 250,
@@ -574,7 +574,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "lightgray",
+    'lightgray',
     {
       r: 211,
       g: 211,
@@ -582,7 +582,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "lightgreen",
+    'lightgreen',
     {
       r: 144,
       g: 238,
@@ -590,7 +590,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "lightgrey",
+    'lightgrey',
     {
       r: 211,
       g: 211,
@@ -598,7 +598,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "lightpink",
+    'lightpink',
     {
       r: 255,
       g: 182,
@@ -606,7 +606,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "lightsalmon",
+    'lightsalmon',
     {
       r: 255,
       g: 160,
@@ -614,7 +614,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "lightseagreen",
+    'lightseagreen',
     {
       r: 32,
       g: 178,
@@ -622,7 +622,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "lightskyblue",
+    'lightskyblue',
     {
       r: 135,
       g: 206,
@@ -630,7 +630,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "lightslategray",
+    'lightslategray',
     {
       r: 119,
       g: 136,
@@ -638,7 +638,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "lightslategrey",
+    'lightslategrey',
     {
       r: 119,
       g: 136,
@@ -646,7 +646,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "lightsteelblue",
+    'lightsteelblue',
     {
       r: 176,
       g: 196,
@@ -654,7 +654,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "lightyellow",
+    'lightyellow',
     {
       r: 255,
       g: 255,
@@ -662,7 +662,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "lime",
+    'lime',
     {
       r: 0,
       g: 255,
@@ -670,7 +670,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "limegreen",
+    'limegreen',
     {
       r: 50,
       g: 205,
@@ -678,7 +678,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "linen",
+    'linen',
     {
       r: 250,
       g: 240,
@@ -686,7 +686,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "magenta",
+    'magenta',
     {
       r: 255,
       g: 0,
@@ -694,7 +694,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "maroon",
+    'maroon',
     {
       r: 128,
       g: 0,
@@ -702,7 +702,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "mediumaquamarine",
+    'mediumaquamarine',
     {
       r: 102,
       g: 205,
@@ -710,7 +710,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "mediumblue",
+    'mediumblue',
     {
       r: 0,
       g: 0,
@@ -718,7 +718,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "mediumorchid",
+    'mediumorchid',
     {
       r: 186,
       g: 85,
@@ -726,7 +726,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "mediumpurple",
+    'mediumpurple',
     {
       r: 147,
       g: 112,
@@ -734,7 +734,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "mediumseagreen",
+    'mediumseagreen',
     {
       r: 60,
       g: 179,
@@ -742,7 +742,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "mediumslateblue",
+    'mediumslateblue',
     {
       r: 123,
       g: 104,
@@ -750,7 +750,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "mediumspringgreen",
+    'mediumspringgreen',
     {
       r: 0,
       g: 250,
@@ -758,7 +758,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "mediumturquoise",
+    'mediumturquoise',
     {
       r: 72,
       g: 209,
@@ -766,7 +766,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "mediumvioletred",
+    'mediumvioletred',
     {
       r: 199,
       g: 21,
@@ -774,7 +774,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "midnightblue",
+    'midnightblue',
     {
       r: 25,
       g: 25,
@@ -782,7 +782,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "mintcream",
+    'mintcream',
     {
       r: 245,
       g: 255,
@@ -790,7 +790,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "mistyrose",
+    'mistyrose',
     {
       r: 255,
       g: 228,
@@ -798,7 +798,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "moccasin",
+    'moccasin',
     {
       r: 255,
       g: 228,
@@ -806,7 +806,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "navajowhite",
+    'navajowhite',
     {
       r: 255,
       g: 222,
@@ -814,7 +814,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "navy",
+    'navy',
     {
       r: 0,
       g: 0,
@@ -822,7 +822,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "oldlace",
+    'oldlace',
     {
       r: 253,
       g: 245,
@@ -830,7 +830,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "olive",
+    'olive',
     {
       r: 128,
       g: 128,
@@ -838,7 +838,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "olivedrab",
+    'olivedrab',
     {
       r: 107,
       g: 142,
@@ -846,7 +846,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "orange",
+    'orange',
     {
       r: 255,
       g: 165,
@@ -854,7 +854,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "orangered",
+    'orangered',
     {
       r: 255,
       g: 69,
@@ -862,7 +862,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "orchid",
+    'orchid',
     {
       r: 218,
       g: 112,
@@ -870,7 +870,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "palegoldenrod",
+    'palegoldenrod',
     {
       r: 238,
       g: 232,
@@ -878,7 +878,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "palegreen",
+    'palegreen',
     {
       r: 152,
       g: 251,
@@ -886,7 +886,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "paleturquoise",
+    'paleturquoise',
     {
       r: 175,
       g: 238,
@@ -894,7 +894,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "palevioletred",
+    'palevioletred',
     {
       r: 219,
       g: 112,
@@ -902,7 +902,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "papayawhip",
+    'papayawhip',
     {
       r: 255,
       g: 239,
@@ -910,7 +910,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "peachpuff",
+    'peachpuff',
     {
       r: 255,
       g: 218,
@@ -918,7 +918,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "peru",
+    'peru',
     {
       r: 205,
       g: 133,
@@ -926,7 +926,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "pink",
+    'pink',
     {
       r: 255,
       g: 192,
@@ -934,7 +934,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "plum",
+    'plum',
     {
       r: 221,
       g: 160,
@@ -942,7 +942,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "powderblue",
+    'powderblue',
     {
       r: 176,
       g: 224,
@@ -950,7 +950,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "purple",
+    'purple',
     {
       r: 128,
       g: 0,
@@ -958,7 +958,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "rebeccapurple",
+    'rebeccapurple',
     {
       r: 102,
       g: 51,
@@ -966,7 +966,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "red",
+    'red',
     {
       r: 255,
       g: 0,
@@ -974,7 +974,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "rosybrown",
+    'rosybrown',
     {
       r: 188,
       g: 143,
@@ -982,7 +982,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "royalblue",
+    'royalblue',
     {
       r: 65,
       g: 105,
@@ -990,7 +990,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "saddlebrown",
+    'saddlebrown',
     {
       r: 139,
       g: 69,
@@ -998,7 +998,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "salmon",
+    'salmon',
     {
       r: 250,
       g: 128,
@@ -1006,7 +1006,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "sandybrown",
+    'sandybrown',
     {
       r: 244,
       g: 164,
@@ -1014,7 +1014,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "seagreen",
+    'seagreen',
     {
       r: 46,
       g: 139,
@@ -1022,7 +1022,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "seashell",
+    'seashell',
     {
       r: 255,
       g: 245,
@@ -1030,7 +1030,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "sienna",
+    'sienna',
     {
       r: 160,
       g: 82,
@@ -1038,7 +1038,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "silver",
+    'silver',
     {
       r: 192,
       g: 192,
@@ -1046,7 +1046,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "skyblue",
+    'skyblue',
     {
       r: 135,
       g: 206,
@@ -1054,7 +1054,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "slateblue",
+    'slateblue',
     {
       r: 106,
       g: 90,
@@ -1062,7 +1062,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "slategray",
+    'slategray',
     {
       r: 112,
       g: 128,
@@ -1070,7 +1070,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "slategrey",
+    'slategrey',
     {
       r: 112,
       g: 128,
@@ -1078,7 +1078,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "snow",
+    'snow',
     {
       r: 255,
       g: 250,
@@ -1086,7 +1086,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "springgreen",
+    'springgreen',
     {
       r: 0,
       g: 255,
@@ -1094,7 +1094,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "steelblue",
+    'steelblue',
     {
       r: 70,
       g: 130,
@@ -1102,7 +1102,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "tan",
+    'tan',
     {
       r: 210,
       g: 180,
@@ -1110,7 +1110,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "teal",
+    'teal',
     {
       r: 0,
       g: 128,
@@ -1118,7 +1118,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "thistle",
+    'thistle',
     {
       r: 216,
       g: 191,
@@ -1126,7 +1126,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "tomato",
+    'tomato',
     {
       r: 255,
       g: 99,
@@ -1134,7 +1134,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "turquoise",
+    'turquoise',
     {
       r: 64,
       g: 224,
@@ -1142,7 +1142,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "violet",
+    'violet',
     {
       r: 238,
       g: 130,
@@ -1150,7 +1150,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "wheat",
+    'wheat',
     {
       r: 245,
       g: 222,
@@ -1158,7 +1158,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "white",
+    'white',
     {
       r: 255,
       g: 255,
@@ -1166,7 +1166,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "whitesmoke",
+    'whitesmoke',
     {
       r: 245,
       g: 245,
@@ -1174,7 +1174,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "yellow",
+    'yellow',
     {
       r: 255,
       g: 255,
@@ -1182,7 +1182,7 @@ const webColors: [string, RGB][] = [
     },
   ],
   [
-    "yellowgreen",
+    'yellowgreen',
     {
       r: 154,
       g: 205,

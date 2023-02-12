@@ -1,11 +1,12 @@
-import HWB from "src/interface/hwb";
+import { HWB } from '../interface/hwb';
 
 /**
  * Returns an HWB colour object from an RGB colour object.
+ *
  * @link https://www.w3.org/TR/css-color-4/#hwb-to-rgb
  * @link http://alvyray.com/Papers/CG/hwb2rgb.htm
  */
-export default function rgbToHwb(r: number, g: number, b: number): HWB {
+const rgbToHwb = (r: number, g: number, b: number): HWB => {
   let f = 0;
   let i = 0;
   const whiteness = Math.min(r, g, b);
@@ -27,4 +28,6 @@ export default function rgbToHwb(r: number, g: number, b: number): HWB {
     w: whiteness,
     b: black,
   };
-}
+};
+
+export default rgbToHwb;

@@ -1,8 +1,9 @@
-import parseIntFromHex from "./parseIntFromHex";
+import parseIntFromHex from './parseIntFromHex';
 
 /**
  * Converts a hexadecimal value to decimal.
  */
-export default function convertHexToDecimal(h: string): number {
+const convertHexToDecimal = (h: string): number => {
   return parseIntFromHex(h) / 255;
-}
+};
+export default convertHexToDecimal;

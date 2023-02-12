@@ -1,4 +1,4 @@
-export default interface HWBALike {
+export interface HWBALike {
   h: number | string;
   w: number | string;
   b: number | string;
