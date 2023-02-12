@@ -14,7 +14,7 @@
   "esnext": "dist/index.mjs",
   "esmodule": "dist/index.mjs",
   "module": "dist/index.cjs",
-  "types": "types/index.d.ts",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thednp/color.git"
