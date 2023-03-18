@@ -1,7 +1,7 @@
 {
   "name": "@thednp/color",
   "author": "thednp",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "🎨 Fast color conversion tool made in TypeScript",
   "keywords": [
     "color",
@@ -9,12 +9,16 @@
     "typescript"
   ],
   "homepage": "http://github.com/thednp/color",
-  "source": "src/index.ts",
-  "main": "dist/index.js",
-  "esnext": "dist/index.mjs",
-  "esmodule": "dist/index.mjs",
-  "module": "dist/index.cjs",
-  "types": "dist/index.d.ts",
+  "source": "./src/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thednp/color.git"
@@ -37,25 +41,24 @@
     "dts": "dts-bundle-generator --config ./dts.config.ts"
   },
   "devDependencies": {
-    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.3",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "@cypress/code-coverage": "^3.10.0",
     "@types/istanbul-lib-instrument": "^1.7.4",
-    "@types/node": "^18.13.0",
-    "@typescript-eslint/eslint-plugin": "^5.31.1",
-    "@typescript-eslint/parser": "^5.35.1",
-    "cypress": "^12.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "@typescript-eslint/parser": "^5.55.0",
+    "cypress": "^12.8.1",
     "dts-bundle-generator": "^7.2.0",
-    "eslint": "^8.29.0",
-    "eslint-plugin-jsdoc": "^39.3.6",
+    "eslint": "^8.36.0",
+    "eslint-plugin-jsdoc": "^40.0.3",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-prettier": "^4.2.1",
     "istanbul-lib-coverage": "^3.2.0",
-    "istanbul-lib-instrument": "^5.2.0",
+    "istanbul-lib-instrument": "^5.2.1",
     "ncp": "^2.0.0",
     "nyc": "^15.1.0",
-    "prettier": "^2.8.3",
-    "rimraf": "^3.0.2",
-    "typescript": "^4.9.4",
-    "vite": "^4.0.4"
+    "prettier": "^2.8.4",
+    "rimraf": "^4.4.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.2.0"
   }
 }

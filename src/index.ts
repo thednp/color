@@ -36,6 +36,8 @@ import type { HSLA } from './interface/hsla';
 import type { HSVA } from './interface/hsva';
 import type { HWBA } from './interface/hwba';
 
+import { version } from '../package.json';
+
 /**
  * Returns a new `Color` instance.
  *
@@ -72,6 +74,7 @@ export default class Color {
   public static roundPart = roundPart;
   public static webColors = webColors;
   public static nonColors = nonColors;
+  public static version = version;
 
   // main public properties
   public r: number;

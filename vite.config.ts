@@ -20,6 +20,8 @@ export default defineConfig({
       formats: ['es', 'cjs', 'iife'],
       fileName: (format: string) => fileName[format],
     },
+    target: 'ESNext',
     sourcemap: true,
-  },
+    minify: true
+  }
 });

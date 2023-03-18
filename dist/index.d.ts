@@ -122,6 +122,7 @@ export default class Color {
 		RGB
 	][];
 	static nonColors: string[];
+	static version: string;
 	r: number;
 	g: number;
 	b: number;
