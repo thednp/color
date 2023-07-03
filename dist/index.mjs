@@ -1373,7 +1373,7 @@ const N = ["transparent", "currentColor", "inherit", "revert", "initial"], b = (
     format: w,
     ok: S
   };
-}, sr = "1.0.7";
+}, sr = "1.0.8";
 class W {
   // bring main utilities to front
   static matchers = f;
