@@ -1242,8 +1242,7 @@ const N = ["transparent", "currentColor", "inherit", "revert", "initial"], b = (
 }, G = (o, t, r) => {
   let e = 0, s = 0;
   const n = Math.min(o, t, r), g = Math.max(o, t, r), a = 1 - g;
-  if (g === n)
-    return { h: 0, w: n, b: a };
+  if (g === n) return { h: 0, w: n, b: a };
   o === n ? (e = t - r, s = 3) : (e = t === n ? r - o : o - t, s = t === n ? 5 : 1);
   const i = (s - e / (g - n)) / 6;
   return {
@@ -1373,7 +1372,7 @@ const N = ["transparent", "currentColor", "inherit", "revert", "initial"], b = (
     format: w,
     ok: S
   };
-}, sr = "1.0.8";
+}, sr = "1.0.9";
 class W {
   // bring main utilities to front
   static matchers = f;
@@ -1594,8 +1593,7 @@ class W {
    * Saturate the colour with a given amount.
    */
   saturate(t) {
-    if (typeof t != "number")
-      return this;
+    if (typeof t != "number") return this;
     const { h: r, s: e, l: s } = this.toHsl(), { r: n, g, b: a } = y(r, x(e + t / 100), s);
     return Object.assign(this, { r: n, g, b: a }), this;
   }
@@ -1616,8 +1614,7 @@ class W {
    * Increase the colour lightness with a given amount.
    */
   lighten(t) {
-    if (typeof t != "number")
-      return this;
+    if (typeof t != "number") return this;
     const { h: r, s: e, l: s } = this.toHsl(), { r: n, g, b: a } = y(r, e, x(s + t / 100));
     return Object.assign(this, { r: n, g, b: a }), this;
   }
@@ -1632,8 +1629,7 @@ class W {
    * Values outside of this range will be wrapped into this range.
    */
   spin(t) {
-    if (typeof t != "number")
-      return this;
+    if (typeof t != "number") return this;
     const { h: r, s: e, l: s } = this.toHsl(), { r: n, g, b: a } = y(x((r * 360 + t) % 360 / 360), e, s);
     return Object.assign(this, { r: n, g, b: a }), this;
   }

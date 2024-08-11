@@ -73,7 +73,7 @@ export interface RGBAObject extends RGBA {
  *
  * @see https://github.com/bgrins/TinyColor
  */
-export default class Color {
+declare class Color {
 	static matchers: {
 		CSS_UNIT: RegExp;
 		ANGLES: string;
@@ -105,17 +105,17 @@ export default class Color {
 	static convertHexToDecimal: (h: string) => number;
 	static convertDecimalToHex: (d: number) => string;
 	static rgbToHsl: (r: number, g: number, b: number) => HSL;
-	static rgbToHex: (r: number, g: number, b: number, allow3Char?: boolean | undefined) => string;
+	static rgbToHex: (r: number, g: number, b: number, allow3Char?: boolean) => string;
 	static rgbToHsv: (r: number, g: number, b: number) => HSV;
 	static rgbToHwb: (r: number, g: number, b: number) => HWB;
-	static rgbaToHex: (r: number, g: number, b: number, a: number, allow4Char?: boolean | undefined) => string;
+	static rgbaToHex: (r: number, g: number, b: number, a: number, allow4Char?: boolean) => string;
 	static hslToRgb: (H: number, S: number, V: number) => RGB;
 	static hsvToRgb: (H: number, S: number, V: number) => RGB;
 	static hueToRgb: (p: number, q: number, t: number) => number;
 	static hwbToRgb: (H: number, W: number, B: number) => RGB;
 	static parseIntFromHex: (val: string) => number;
-	static stringInputToObject: (input?: string | undefined) => HSLALike | HSVALike | HWBALike | RGBALike;
-	static inputToRGB: (input?: ColorInputTypes | undefined) => RGBAObject;
+	static stringInputToObject: (input?: string) => RGBALike | HSLALike | HSVALike | HWBALike;
+	static inputToRGB: (input?: ColorInputTypes) => RGBAObject;
 	static roundPart: (v: number) => number;
 	static webColors: [
 		string,
@@ -252,6 +252,10 @@ export default class Color {
 	 */
 	toString(allowShort?: boolean | undefined): string;
 }
+
+export {
+	Color as default,
+};
 
 export as namespace Color;
 
