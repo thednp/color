@@ -7,8 +7,6 @@ const bound01 = (N: string | number, max: number): number => {
   let n = N;
   const processPercent = isPercentage(n);
 
-  if (typeof N === 'number' && Math.min(N, 0) === 0 && Math.max(N, 1) === 1) return N;
-
   if (isOnePointZero(N)) n = '100%';
 
   n =
