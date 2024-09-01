@@ -12,7 +12,7 @@ const bound01 = (N: string | number, max: number): number => {
   if (isOnePointZero(N)) n = '100%';
 
   n =
-    max > 1
+    max > 360
       ? Number.parseFloat(n as string)
       : Math.min(max, Math.max(0, Number.parseFloat(n as string)));
 
