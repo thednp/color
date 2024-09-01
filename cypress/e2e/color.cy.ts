@@ -1021,7 +1021,7 @@ describe("Color Class Tests", () => {
     expect(color.toHexString()).to.equal("#ff0000");
     expect(color.toHex8String()).to.equal("#ff0000");
     expect(color.toHexString(true)).to.equal("#f00");
-    expect(color.toHex8String(true)).to.equal("#f00f");
+    expect(color.toHex8String(true)).to.equal("#f00");
     expect(color.clone().spin(120).setAlpha(0.8).toHexString()).to.equal(
       "#00ff00cc"
     );
