@@ -1,7 +1,7 @@
 {
   "name": "@thednp/color",
   "author": "thednp",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "🎨 Fast color conversion tool made in TypeScript",
   "keywords": [
     "color",
@@ -31,6 +31,7 @@
   "scripts": {
     "pre-test": "pnpm clean-coverage",
     "test": "pnpm pre-test && npx cypress run",
+    "dev": "pnpx vite serve experiments --port 3000",
     "badges": "npx -p dependency-version-badge update-badge typescript prettier vite cypress eslint",
     "prepublishOnly": "npm update && pnpm up && pnpm format && pnpm build && pnpm badges",
     "clean-coverage": "rimraf coverage .nyc_output",
@@ -44,12 +45,12 @@
   },
   "devDependencies": {
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.2",
-    "@cypress/code-coverage": "^3.12.44",
+    "@cypress/code-coverage": "^3.12.46",
     "@types/istanbul-lib-instrument": "^1.7.7",
-    "@types/node": "^22.2.0",
+    "@types/node": "^22.5.1",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
-    "cypress": "^13.13.2",
+    "cypress": "^13.14.1",
     "dts-bundle-generator": "^9.5.1",
     "eslint": "^8.57.0",
     "eslint-plugin-jsdoc": "^46.10.1",
@@ -62,7 +63,7 @@
     "prettier": "^2.8.8",
     "rimraf": "^5.0.10",
     "typescript": "^5.5.4",
-    "vite": "^5.4.0"
+    "vite": "^5.4.2"
   },
   "packageManager": "pnpm@8.6.12"
 }

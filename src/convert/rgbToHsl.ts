@@ -2,6 +2,8 @@ import type { HSL } from '../interface/hsl';
 
 /**
  * Converts an RGB colour value to HSL.
+ * Input RGB in [0-1] range
+ * Output HSL in [0-1] range
  */
 const rgbToHsl = (r: number, g: number, b: number): HSL => {
   const max = Math.max(r, g, b);

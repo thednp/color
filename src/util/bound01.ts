@@ -5,23 +5,22 @@ import isPercentage from './isPercentage';
  */
 const bound01 = (N: string | number, max: number): number => {
   let n = N;
+  const processPercent = isPercentage(n);
 
-  if (
-    typeof N === 'number' &&
-    Math.min(N, 0) === 0 && // round values to 6 decimals Math.round(N * (10 ** 6)) / 10 ** 6
-    Math.max(N, 1) === 1
-  )
-    return N;
+  if (typeof N === 'number' && Math.min(N, 0) === 0 && Math.max(N, 1) === 1) return N;
 
   if (isOnePointZero(N)) n = '100%';
 
-  const processPercent = isPercentage(n);
-  n = max === 360 ? parseFloat(n as string) : Math.min(max, Math.max(0, parseFloat(n as string)));
+  n =
+    max > 1
+      ? Number.parseFloat(n as string)
+      : Math.min(max, Math.max(0, Number.parseFloat(n as string)));
 
   // Automatically convert percentage into number
   if (processPercent) n = (n * max) / 100;
 
   // Handle floating point rounding errors
+  // or maybe round values to 6 decimals Math.round(N * (10 ** 6)) / 10 ** 6
   if (Math.abs(n - max) < 0.000001) {
     return 1;
   }

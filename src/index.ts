@@ -217,7 +217,10 @@ export default class Color {
    * it will find a 3 characters shorthand of the decimal value.
    */
   toHex(allow3Char?: boolean | undefined): string {
-    const { r, g, b, a } = this.toRgb();
+    let { r, g, b, a } = this;
+
+    [r, g, b] = [r, g, b].map(n => roundPart(n * 255));
+    a = roundPart(a * 100) / 100;
 
     return a === 1 ? rgbToHex(r, g, b, allow3Char) : rgbaToHex(r, g, b, a, allow3Char);
   }
@@ -234,9 +237,12 @@ export default class Color {
    * Returns the HEX8 value of the colour.
    */
   toHex8(allow4Char?: boolean | undefined): string {
-    const { r, g, b, a } = this.toRgb();
+    let { r, g, b, a } = this;
 
-    return rgbaToHex(r, g, b, a, allow4Char);
+    [r, g, b] = [r, g, b].map(n => roundPart(n * 255));
+    a = roundPart(a * 100) / 100;
+
+    return a === 1 ? rgbToHex(r, g, b, allow4Char) : rgbaToHex(r, g, b, a, allow4Char);
   }
 
   /**

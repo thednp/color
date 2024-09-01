@@ -7,6 +7,7 @@ export interface HSLALike {
 	format: string;
 	ok: boolean;
 }
+/** An HSVA object, with all values in the range 0-1 */
 export interface HSVALike {
 	h: number | string;
 	s: number | string;
@@ -15,6 +16,7 @@ export interface HSVALike {
 	format: string;
 	ok: boolean;
 }
+/** An HWBA object, with all values in the range 0-1 */
 export interface HWBALike {
 	h: number | string;
 	w: number | string;
@@ -23,6 +25,7 @@ export interface HWBALike {
 	format: string;
 	ok: boolean;
 }
+/** An RGBA object, with all values in the range 0-1 */
 export interface RGBALike {
 	r: number | string;
 	g: number | string;
@@ -92,8 +95,8 @@ declare class Color {
 		hex8: RegExp;
 	};
 	static isOnePointZero: (n: string | number) => boolean;
-	static isPercentage: (n: string | number) => boolean;
-	static isValidCSSUnit: (comp: string | number) => boolean;
+	static isPercentage: (n: string | number) => n is string;
+	static isValidCSSUnit: (comp: string | number) => comp is number;
 	static isNonColor: <T extends string>(str: T) => boolean;
 	static isColorName: (color: string) => color is "transparent" | "inherit" | "currentColor" | "revert" | "initial";
 	static isColorType: <T extends object>(obj: unknown, inst: T) => obj is T;

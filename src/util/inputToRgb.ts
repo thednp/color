@@ -51,8 +51,8 @@ const inputToRGB = (input?: ColorInputTypes): RGBAObject => {
   let ok = false;
 
   if (!color || typeof color === 'string') {
-    color = stringInputToObject(color as string);
-    ok = (color as RGBAObject).ok;
+    color = stringInputToObject(color);
+    ok = (color as RGBAObject).ok || ok;
   }
 
   if (
@@ -61,8 +61,13 @@ const inputToRGB = (input?: ColorInputTypes): RGBAObject => {
     isValidCSSUnit(color.g) &&
     isValidCSSUnit(color.b)
   ) {
+    // check if already a Color instance
+    // RGB values here are all in [0, 1] range
+    if (['format', 'ok', 'originalInput'].every(x => x in color)) {
+      return { ...color } as RGBAObject;
+    }
     ({ r, g, b } = color as RGB);
-    // RGB values now are all in [0, 1] range
+    // RGB values now are all in [0, 100%|255] range
     [r, g, b] = [r, g, b].map(n => bound01(n, isPercentage(n) ? 100 : 255));
     rgb = { r, g, b };
     format = 'format' in color ? (color as RGBAObject).format : 'rgb';
@@ -74,10 +79,10 @@ const inputToRGB = (input?: ColorInputTypes): RGBAObject => {
     isValidCSSUnit(color.v)
   ) {
     ({ h, s, v } = color);
-    h = bound01(h, 360); // hue can be `5deg` or a [0, 1] value
-    s = bound01(s, 100); // saturation can be `5%` or a [0, 1] value
-    v = bound01(v, 100); // brightness can be `5%` or a [0, 1] value
-    rgb = hsvToRgb(h, s, v);
+    h = bound01(h, 360); // hue input can be `5deg` or a [0, 360] value
+    s = bound01(s, 100); // saturation input can be `5%` or a [0, 100] value
+    v = bound01(v, 100); // brightness input can be `5%` or a [0, 100] value
+    rgb = hsvToRgb(h, s, v); // outputs RGBa with [0-1] values
     format = 'hsv';
   }
   if (
@@ -90,7 +95,7 @@ const inputToRGB = (input?: ColorInputTypes): RGBAObject => {
     h = bound01(h, 360); // hue can be `5deg` or a [0, 1] value
     s = bound01(s, 100); // saturation can be `5%` or a [0, 1] value
     l = bound01(l, 100); // lightness can be `5%` or a [0, 1] value
-    rgb = hslToRgb(h, s, l);
+    rgb = hslToRgb(h, s, l); // outputs RGBa with [0-1] values
     format = 'hsl';
   }
   if (
@@ -100,10 +105,11 @@ const inputToRGB = (input?: ColorInputTypes): RGBAObject => {
     isValidCSSUnit(color.b)
   ) {
     ({ h, w, b } = color);
-    h = bound01(h, 360); // hue can be `5deg` or a [0, 1] value
-    w = bound01(w, 100); // whiteness can be `5%` or a [0, 1] value
-    b = bound01(b, 100); // blackness can be `5%` or a [0, 1] value
-    rgb = hwbToRgb(h, w, b);
+
+    h = bound01(h, 360); // hue input can be `5deg` or a [0, 360] value
+    w = bound01(w, 100); // whiteness input can be `5%` or a [0, 100] value
+    b = bound01(b, 100); // blackness input can be `5%` or a [0, 100] value
+    rgb = hwbToRgb(h, w, b); // outputs RGBa with [0-1] values
     format = 'hwb';
   }
 
@@ -113,9 +119,7 @@ const inputToRGB = (input?: ColorInputTypes): RGBAObject => {
   }
 
   return {
-    r: rgb.r,
-    g: rgb.g,
-    b: rgb.b,
+    ...rgb,
     a: boundAlpha(a),
     format,
     ok,
