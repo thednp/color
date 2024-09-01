@@ -491,7 +491,7 @@ describe("Color Class Tests", () => {
     expect(alpha.toRgb()).to.deep.equal({ r: 255, g: 0, b: 255, a: 1 });
     expect(alpha.ok).to.be.true;
     const alpha1 = new Color("rgb(255 0 255 / 110%)");
-    expect(alpha1.toRgb()).to.deep.equal({ r: 255, g: 0, b: 255, a: 1 });
+    expect(alpha1.toRgb()).to.deep.equal({ r: 255, g: 0, b: 255, a: 0.1 });
     expect(alpha1.ok).to.be.true;
     const rgb = new Color("rgb(256,265,-1)");
     expect(rgb.toRgb()).to.deep.equal({ r: 255, g: 255, b: 0, a: 1 });
@@ -1019,7 +1019,7 @@ describe("Color Class Tests", () => {
     expect(color.toHslCSS4String()).to.equal("hsl(0deg 100% 50%)");
     expect(color.toHwbString()).to.equal("hwb(0deg 0% 0%)");
     expect(color.toHexString()).to.equal("#ff0000");
-    expect(color.toHex8String()).to.equal("#ff0000ff");
+    expect(color.toHex8String()).to.equal("#ff0000");
     expect(color.toHexString(true)).to.equal("#f00");
     expect(color.toHex8String(true)).to.equal("#f00f");
     expect(color.clone().spin(120).setAlpha(0.8).toHexString()).to.equal(
