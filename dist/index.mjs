@@ -1186,12 +1186,12 @@ const I = ["transparent", "currentColor", "inherit", "revert", "initial"], i = (
       b: 50
     }
   ]
-], D = "deg|rad|grad|turn", L = "[-\\+]?\\d+%?", V = "[-\\+]?\\d*\\.\\d+%?", Z = `[-\\+]?\\d*\\.?\\d+(?:${D})?`, x = `(?:${V})|(?:${L})`, F = `(?:${x})|(?:${Z}?)`, er = "(?:[\\s|\\(\\s|\\s\\(\\s]+)?", sr = "(?:[\\s|\\)\\s]+)?", P = "(?:[,|\\s]+)", nr = "(?:[,|\\/\\s]*)?", w = `${er}(${F})${P}(${x})${P}(${x})${nr}(${x})?${sr}`, f = {
+], U = "deg|rad|grad|turn", D = "[-\\+]?\\d+%?", L = "[-\\+]?\\d*\\.\\d+%?", V = `[-\\+]?\\d*\\.?\\d+(?:${U})?`, x = `(?:${L})|(?:${D})`, F = `(?:${x})|(?:${V}?)`, tr = "(?:[\\s|\\(\\s|\\s\\(\\s]+)?", er = "(?:[\\s|\\)\\s]+)?", P = "(?:[,|\\s]+)", sr = "(?:[,|\\/\\s]*)?", w = `${tr}(${F})${P}(${x})${P}(${x})${sr}(${x})?${er}`, f = {
   CSS_UNIT: new RegExp(F),
-  ANGLES: D,
-  CSS_ANGLE: Z,
-  CSS_INTEGER: L,
-  CSS_NUMBER: V,
+  ANGLES: U,
+  CSS_ANGLE: V,
+  CSS_INTEGER: D,
+  CSS_NUMBER: L,
   CSS_UNIT2: F,
   PERMISSIVE_MATCH: w,
   hwb: new RegExp(`hwb${w}`),
@@ -1202,18 +1202,16 @@ const I = ["transparent", "currentColor", "inherit", "revert", "initial"], i = (
   hex6: /^#?([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})$/,
   hex4: /^#?([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/,
   hex8: /^#?([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})$/
-}, z = (o) => I.includes(o), y = (o, t) => o !== null && typeof o == "object" && Object.keys(t).every((r) => r in o), J = (o) => `${o}`.includes(".") && parseFloat(o) === 1, O = (o) => typeof o == "string" && o.includes("%"), c = (o) => !!f.CSS_UNIT.exec(`${o}`), K = ["rgb", "hex", "hsl", "hsv", "hwb"], Q = (o) => I.includes(o) || ["#", ...K].some((t) => o.includes(t)) ? !1 : T.some(([t]) => o === t), _ = 1e-6, G = (o, t) => Math.abs(o * t - t) < _ ? 1 : o < _ ? 0 : o, u = (o, t) => {
-  if (typeof o == "number" && o <= 1 && o >= 0)
-    return G(o, t);
+}, Z = (o) => I.includes(o), y = (o, t) => o !== null && typeof o == "object" && Object.keys(t).every((r) => r in o), z = (o) => `${o}`.includes(".") && parseFloat(o) === 1, O = (o) => typeof o == "string" && o.includes("%"), c = (o) => !!f.CSS_UNIT.exec(`${o}`), J = ["rgb", "hex", "hsl", "hsv", "hwb"], K = (o) => I.includes(o) || ["#", ...J].some((t) => o.includes(t)) ? !1 : T.some(([t]) => o === t), _ = 1e-6, nr = (o, t) => Math.abs(o * t - t) < _ ? 1 : o < _ ? 0 : o, u = (o, t) => {
   let r = o;
-  return J(o) && (r = "100%"), O(r) ? Number.parseFloat(r) / 100 : (r = typeof r != "number" ? Number.parseFloat(r) : r, t === 360 ? r = (r < 0 ? r % t + t : r > 360 ? r % t : r) / t : (r = Math.min(t, Math.max(0, r)), r = r / t), G(r, t));
+  return z(o) && (r = "100%"), O(r) ? Number.parseFloat(r) / 100 : (r = typeof r != "number" ? Number.parseFloat(r) : r, t === 360 ? r = (r < 0 ? r % t + t : r > 360 ? r % t : r) / t : (r = Math.min(t, Math.max(0, r)), r = r / t), nr(r, t));
 }, N = (o) => {
   let t = parseFloat(o);
   return (Number.isNaN(t) || t < 0 || t > 1) && (t = 1), t;
-}, A = (o) => Math.min(1, Math.max(0, o)), d = (o) => o.length === 1 ? `0${o}` : String(o), X = (o) => {
+}, A = (o) => Math.min(1, Math.max(0, o)), d = (o) => o.length === 1 ? `0${o}` : String(o), Q = (o) => {
   const [[, t]] = T.filter(([r]) => r === o.toLowerCase());
   return t;
-}, h = (o) => parseInt(o, 16), M = (o) => h(o) / 255, Y = (o) => i(o * 255).toString(16), j = (o, t, r) => {
+}, h = (o) => parseInt(o, 16), M = (o) => h(o) / 255, X = (o) => i(o * 255).toString(16), G = (o, t, r) => {
   const e = Math.max(o, t, r), s = Math.min(o, t, r);
   let n = 0, g = 0;
   const a = (e + s) / 2;
@@ -1236,7 +1234,7 @@ const I = ["transparent", "currentColor", "inherit", "revert", "initial"], i = (
     e = v(a, g, o + 1 / 3), s = v(a, g, o), n = v(a, g, o - 1 / 3);
   }
   return { r: e, g: s, b: n };
-}, q = (o, t, r) => {
+}, j = (o, t, r) => {
   let e = 0, s = 0;
   const n = Math.min(o, t, r), g = Math.max(o, t, r), a = 1 - g;
   if (g === n) return { h: 0, w: n, b: a };
@@ -1247,14 +1245,14 @@ const I = ["transparent", "currentColor", "inherit", "revert", "initial"], i = (
     w: n,
     b: a
   };
-}, W = (o, t, r) => {
+}, Y = (o, t, r) => {
   if (t + r >= 1) {
     const g = t / (t + r);
     return { r: g, g, b: g };
   }
   let { r: e, g: s, b: n } = S(o, 1, 0.5);
   return [e, s, n] = [e, s, n].map((g) => g * (1 - t - r) + t), { r: e, g: s, b: n };
-}, B = (o, t, r) => {
+}, q = (o, t, r) => {
   const e = Math.max(o, t, r), s = Math.min(o, t, r);
   let n = 0;
   const g = e, a = e - s, b = e === 0 ? 0 : a / e;
@@ -1274,18 +1272,18 @@ const I = ["transparent", "currentColor", "inherit", "revert", "initial"], i = (
     d(i(o).toString(16)),
     d(i(t).toString(16)),
     d(i(r).toString(16)),
-    d(Y(e))
+    d(X(e))
   ];
   return s && n[0].charAt(0) === n[0].charAt(1) && n[1].charAt(0) === n[1].charAt(1) && n[2].charAt(0) === n[2].charAt(1) && n[3].charAt(0) === n[3].charAt(1) ? n[0].charAt(0) + n[1].charAt(0) + n[2].charAt(0) + n[3].charAt(0) : n.join("");
-}, rr = (o) => {
+}, W = (o) => {
   const t = String(o).trim().toLowerCase();
-  if (Q(t))
-    return Object.assign(X(t), {
+  if (K(t))
+    return Object.assign(Q(t), {
       a: 1,
       format: "rgb",
       ok: !0
     });
-  if (z(t))
+  if (Z(t))
     return {
       r: 0,
       g: 0,
@@ -1363,48 +1361,48 @@ const I = ["transparent", "currentColor", "inherit", "revert", "initial"], i = (
   r: u(o, 255),
   g: u(t, 255),
   b: u(r, 255)
-}), U = (o) => {
+}), B = (o) => {
   let t = { r: 0, g: 0, b: 0 }, r = o, e = 1, s, n, g, a, b, l, p, $, m = "rgb", k = !1;
-  if ((!r || typeof r == "string") && (r = rr(r), k = r.ok || k), y(r, t) && c(r.r) && c(r.g) && c(r.b)) {
+  if ((!r || typeof r == "string") && (r = W(r), k = r.ok || k), y(r, t) && c(r.r) && c(r.g) && c(r.b)) {
     if (["format", "ok", "originalInput"].every((H) => H in r))
       return { ...r };
     ({ r: p, g: $, b } = r), t = or(p, $, b), m = "format" in r ? r.format : "rgb";
   }
-  return y(r, { h: 0, s: 0, v: 0 }) && c(r.h) && c(r.s) && c(r.v) && ({ h: l, s, v: n } = r, l = u(l, 360), s = u(s, 100), n = u(n, 100), t = E(l, s, n), m = "hsv"), y(r, { h: 0, s: 0, l: 0 }) && c(r.h) && c(r.s) && c(r.l) && ({ h: l, s, l: g } = r, l = u(l, 360), s = u(s, 100), g = u(g, 100), t = S(l, s, g), m = "hsl"), y(r, { h: 0, w: 0, b: 0 }) && c(r.h) && c(r.w) && c(r.b) && ({ h: l, w: a, b } = r, l = u(l, 360), a = u(a, 100), b = u(b, 100), t = W(l, a, b), m = "hwb"), c(r.a) && (e = r.a, e = O(e) || parseFloat(`${e}`) > 1 ? u(e, 100) : e), {
+  return y(r, { h: 0, s: 0, v: 0 }) && c(r.h) && c(r.s) && c(r.v) && ({ h: l, s, v: n } = r, l = u(l, 360), s = u(s, 100), n = u(n, 100), t = E(l, s, n), m = "hsv"), y(r, { h: 0, s: 0, l: 0 }) && c(r.h) && c(r.s) && c(r.l) && ({ h: l, s, l: g } = r, l = u(l, 360), s = u(s, 100), g = u(g, 100), t = S(l, s, g), m = "hsl"), y(r, { h: 0, w: 0, b: 0 }) && c(r.h) && c(r.w) && c(r.b) && ({ h: l, w: a, b } = r, l = u(l, 360), a = u(a, 100), b = u(b, 100), t = Y(l, a, b), m = "hwb"), c(r.a) && (e = r.a, e = O(e) || parseFloat(`${e}`) > 1 ? u(e, 100) : e), {
     ...t,
     a: N(e),
     format: m,
     ok: k
   };
 }, gr = "1.0.11";
-class tr {
+class rr {
   // bring main utilities to front
   static matchers = f;
-  static isOnePointZero = J;
+  static isOnePointZero = z;
   static isPercentage = O;
   static isValidCSSUnit = c;
-  static isNonColor = z;
-  static isColorName = Q;
+  static isNonColor = Z;
+  static isColorName = K;
   static isColorType = y;
   static pad2 = d;
   static clamp01 = A;
   static bound01 = u;
   static boundAlpha = N;
-  static getRGBFromName = X;
+  static getRGBFromName = Q;
   static convertHexToDecimal = M;
-  static convertDecimalToHex = Y;
-  static rgbToHsl = j;
+  static convertDecimalToHex = X;
+  static rgbToHsl = G;
   static rgbToHex = R;
-  static rgbToHsv = B;
-  static rgbToHwb = q;
+  static rgbToHsv = q;
+  static rgbToHwb = j;
   static rgbaToHex = C;
   static hslToRgb = E;
   static hsvToRgb = E;
   static hueToRgb = v;
-  static hwbToRgb = W;
+  static hwbToRgb = Y;
   static parseIntFromHex = h;
-  static stringInputToObject = rr;
-  static inputToRGB = U;
+  static stringInputToObject = W;
+  static inputToRGB = B;
   static roundPart = i;
   static webColors = T;
   static nonColors = I;
@@ -1419,7 +1417,7 @@ class tr {
   originalInput;
   // main public methods
   constructor(t, r) {
-    const e = r && K.includes(r) ? r : "", { r: s, g: n, b: g, a, ok: b, format: l } = U(t);
+    const e = r && J.includes(r) ? r : "", { r: s, g: n, b: g, a, ok: b, format: l } = B(t);
     this.originalInput = t, this.r = s, this.g = n, this.b = g, this.a = a, this.ok = b, this.format = e || l;
   }
   /**
@@ -1526,7 +1524,7 @@ class tr {
    * Returns the colour as a HSVA object.
    */
   toHsv() {
-    const { r: t, g: r, b: e, a: s } = this, { h: n, s: g, v: a } = B(t, r, e);
+    const { r: t, g: r, b: e, a: s } = this, { h: n, s: g, v: a } = q(t, r, e);
     return {
       h: n,
       s: g,
@@ -1538,7 +1536,7 @@ class tr {
    * Returns the colour as an HSLA object.
    */
   toHsl() {
-    const { r: t, g: r, b: e, a: s } = this, { h: n, s: g, l: a } = j(t, r, e);
+    const { r: t, g: r, b: e, a: s } = this, { h: n, s: g, l: a } = G(t, r, e);
     return {
       h: n,
       s: g,
@@ -1570,7 +1568,7 @@ class tr {
    * Returns the colour as an HWBA object.
    */
   toHwb() {
-    const { r: t, g: r, b: e, a: s } = this, { h: n, w: g, b: a } = q(t, r, e);
+    const { r: t, g: r, b: e, a: s } = this, { h: n, w: g, b: a } = j(t, r, e);
     return {
       h: n,
       w: g,
@@ -1639,7 +1637,7 @@ class tr {
   }
   /** Returns a clone of the current `Color` instance. */
   clone() {
-    return new tr(this);
+    return new rr(this);
   }
   /**
    * Returns the colour value in CSS valid string format.
@@ -1650,6 +1648,6 @@ class tr {
   }
 }
 export {
-  tr as default
+  rr as default
 };
 //# sourceMappingURL=index.mjs.map

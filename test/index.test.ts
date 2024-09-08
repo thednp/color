@@ -246,16 +246,15 @@ test("Test Init - set specific format", () => {
 
     // hsv is not supported, use rgb
 });
-
 test("Color Object to RGB Object", () => {
     // red
-    expect(new Color({ h: "-240", s: 1, l: 0.5 }).toRgb()).to.deep.equal({
+    expect(new Color({ h: "-240", s: 100, l: 50 }).toRgb()).to.deep.equal({
         r: 0,
         g: 255,
         b: 0,
         a: 1,
     });
-    expect(new Color({ h: 0, s: 1, v: 0.5 }).toRgb()).to.deep.equal({
+    expect(new Color({ h: 0, s: 100, v: 50 }).toRgb()).to.deep.equal({
         r: 255 / 2,
         g: 0,
         b: 0,
@@ -268,13 +267,13 @@ test("Color Object to RGB Object", () => {
         a: 1,
     });
     // green
-    expect(new Color({ h: "120", s: 1, l: 0.5 }).toRgb()).to.deep.equal({
+    expect(new Color({ h: "120", s: 100, l: 50 }).toRgb()).to.deep.equal({
         r: 0,
         g: 255,
         b: 0,
         a: 1,
     });
-    expect(new Color({ h: "120deg", s: 1, v: 0.5 }).toRgb()).to.deep.equal({
+    expect(new Color({ h: "120deg", s: 100, v: 50 }).toRgb()).to.deep.equal({
         r: 0,
         g: 255 / 2,
         b: 0,
@@ -287,13 +286,13 @@ test("Color Object to RGB Object", () => {
         a: 1,
     });
     // blue
-    expect(new Color({ h: "240", s: 1, l: 0.5 }).toRgb()).to.deep.equal({
+    expect(new Color({ h: "240", s: 100, l: 50 }).toRgb()).to.deep.equal({
         r: 0,
         g: 0,
         b: 255,
         a: 1,
     });
-    expect(new Color({ h: "240deg", s: 1, v: 0.5 }).toRgb()).to.deep.equal({
+    expect(new Color({ h: "240deg", s: 100, v: 50 }).toRgb()).to.deep.equal({
         r: 0,
         g: 0,
         b: 255 / 2,
@@ -314,7 +313,7 @@ test("Color Object to HSL Object", () => {
         l: 0.5,
         a: 1,
     });
-    expect(new Color({ h: 0, s: 1, v: 0.5 }).toHsl()).to.deep.equal({
+    expect(new Color({ h: 0, s: 100, v: 50 }).toHsl()).to.deep.equal({
         h: 0,
         s: 1,
         l: 0.25,
@@ -333,7 +332,7 @@ test("Color Object to HSL Object", () => {
         l: 0.5,
         a: 1,
     });
-    expect(new Color({ h: "120deg", s: 1, v: 0.5 }).toHsl()).to.deep.equal({
+    expect(new Color({ h: "120deg", s: 100, v: 50 }).toHsl()).to.deep.equal({
         h: 12 / 36,
         s: 1,
         l: 0.25,
@@ -352,7 +351,7 @@ test("Color Object to HSL Object", () => {
         l: 0.5,
         a: 1,
     });
-    expect(new Color({ h: "240deg", s: 1, v: 0.5 }).toHsl()).to.deep.equal({
+    expect(new Color({ h: "240deg", s: 100, v: 50 }).toHsl()).to.deep.equal({
         h: 24 / 36,
         s: 1,
         l: 0.25,
@@ -373,7 +372,7 @@ test("Color Object to HSV Object", () => {
         v: 1,
         a: 1,
     });
-    expect(new Color({ h: 0, s: 1, l: 0.5 }).toHsv()).to.deep.equal({
+    expect(new Color({ h: 0, s: 100, l: 50 }).toHsv()).to.deep.equal({
         h: 0,
         s: 1,
         v: 1,
@@ -392,7 +391,7 @@ test("Color Object to HSV Object", () => {
         v: 1,
         a: 1,
     });
-    expect(new Color({ h: "120deg", s: 1, l: 0.5 }).toHsv()).to.deep.equal({
+    expect(new Color({ h: "120deg", s: 100, l: 50 }).toHsv()).to.deep.equal({
         h: 12 / 36,
         s: 1,
         v: 1,
@@ -411,7 +410,7 @@ test("Color Object to HSV Object", () => {
         v: 1,
         a: 1,
     });
-    expect(new Color({ h: "240deg", s: 1, l: 0.5 }).toHsv()).to.deep.equal({
+    expect(new Color({ h: "240deg", s: 100, l: 50 }).toHsv()).to.deep.equal({
         h: 24 / 36,
         s: 1,
         v: 1,
@@ -432,13 +431,13 @@ test("Color Object to HWB Object", () => {
         b: 0,
         a: 1,
     });
-    expect(new Color({ h: 0, s: 1, v: 1 }).toHwb()).to.deep.equal({
+    expect(new Color({ h: 0, s: 100, v: 100 }).toHwb()).to.deep.equal({
         h: 0,
         w: 0,
         b: 0,
         a: 1,
     });
-    expect(new Color({ h: "0deg", s: 1, l: 0.5 }).toHwb()).to.deep.equal({
+    expect(new Color({ h: "0deg", s: 100, l: 50 }).toHwb()).to.deep.equal({
         h: 0,
         w: 0,
         b: 0,
@@ -451,13 +450,13 @@ test("Color Object to HWB Object", () => {
         b: 0,
         a: 1,
     });
-    expect(new Color({ h: "120deg", s: 1, v: 1 }).toHwb()).to.deep.equal({
+    expect(new Color({ h: "120deg", s: 100, v: 100 }).toHwb()).to.deep.equal({
         h: 12 / 36,
         w: 0,
         b: 0,
         a: 1,
     });
-    expect(new Color({ h: "120", s: 1, l: 0.5 }).toHwb()).to.deep.equal({
+    expect(new Color({ h: "120", s: 100, l: 50 }).toHwb()).to.deep.equal({
         h: 12 / 36,
         w: 0,
         b: 0,
@@ -470,20 +469,19 @@ test("Color Object to HWB Object", () => {
         b: 0,
         a: 1,
     });
-    expect(new Color({ h: "240deg", s: 1, v: 1 }).toHwb()).to.deep.equal({
+    expect(new Color({ h: "240deg", s: 100, v: 100 }).toHwb()).to.deep.equal({
         h: 24 / 36,
         w: 0,
         b: 0,
         a: 1,
     });
-    expect(new Color({ h: "240", s: 1, l: 0.5 }).toHwb()).to.deep.equal({
+    expect(new Color({ h: "240", s: 100, l: 50 }).toHwb()).to.deep.equal({
         h: 24 / 36,
         w: 0,
         b: 0,
         a: 1,
     });
 });
-
 test("RegExp test - CSS3 values outside boundaries", () => {
     const alpha = new Color("rgba(255,0,255,-5)");
     expect(alpha.toRgb()).to.deep.equal({ r: 255, g: 0, b: 255, a: 1 });
