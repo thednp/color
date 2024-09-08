@@ -7,11 +7,11 @@ const roundAroundEpsilon = (n: number, max: number) =>
 
 /**
  * Take input from [0, 100|255|360] and return it as [0, 1]
- * Values in [0, 1] range are no longer treated different.
+ * Values in [0, 1] range are no longer returned.
  * The reason is https://github.com/thednp/solid-color-picker/issues/2
  */
 const bound01 = (input: string | number, max: number): number => {
-  // Numbers within [0, 1] range are returned
+  // Numbers within [0, 1] range are no longer returned
   // if (typeof input === 'number' && input <= 1 && input >= 0) {
   //   return roundAroundEpsilon(input, max);
   // }
