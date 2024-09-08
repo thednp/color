@@ -99,10 +99,10 @@ declare class Color {
 	static isValidCSSUnit: (comp: string | number) => comp is number;
 	static isNonColor: <T extends string>(str: T) => boolean;
 	static isColorName: (color: string) => color is "transparent" | "inherit" | "currentColor" | "revert" | "initial";
-	static isColorType: <T extends object>(obj: unknown, inst: T) => obj is T;
+	static isColorType: <T extends Record<string, number | string>>(obj: unknown, inst: T) => obj is T;
 	static pad2: (c: string) => string;
 	static clamp01: (v: number) => number;
-	static bound01: (N: string | number, max: number) => number;
+	static bound01: (input: string | number, max: number) => number;
 	static boundAlpha: (a: string | number) => number;
 	static getRGBFromName: (name: string) => RGB;
 	static convertHexToDecimal: (h: string) => number;
