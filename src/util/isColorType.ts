@@ -1,7 +1,8 @@
 /**
  * Check if a value is an instance of an RGB(a)/HSL(a)/HSV(a)/HWB(a) instance.
  */
-const isColorType = <T extends object>( // RGBALike | HSLALike | HSVALike | HWBALike
+const isColorType = <T extends Record<string, number | string>>(
+  // RGBALike | HSLALike | HSVALike | HWBALike
   obj: unknown,
   inst: T,
 ): obj is T => {

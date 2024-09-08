@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 
 const NAME = 'Color';
@@ -11,6 +11,11 @@ const fileName = {
 
 export default defineConfig({
   base: './',
+  resolve: {
+    alias: {
+      "~": resolve(__dirname, "src"),
+    },
+  },
   build: {
     emptyOutDir: true,
     outDir: 'dist',

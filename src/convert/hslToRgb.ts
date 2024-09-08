@@ -14,7 +14,7 @@ const hslToRgb = (h: number, s: number, l: number): RGB => {
     g = l;
     b = l;
     r = l;
-  } else if (l) {
+  } /*if (l)*/ else {
     const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
     const p = 2 * l - q;
     r = hueToRgb(p, q, h + 1 / 3);

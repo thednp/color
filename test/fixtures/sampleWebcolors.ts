@@ -1,4 +1,4 @@
-import { HSVA } from '../../src/interface/hsva';
+import { type HSVA } from '../../src/interface/hsva';
 
 const sampleWebcolors: {
   name: string;

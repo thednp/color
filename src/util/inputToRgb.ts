@@ -8,6 +8,7 @@ import boundAlpha from './boundAlpha';
 import hsvToRgb from '../convert/hsvToRgb';
 import hslToRgb from '../convert/hslToRgb';
 import hwbToRgb from '../convert/hwbToRgb';
+import rgbToRgb from '../convert/rgbToRgb';
 
 import type { RGBAObject } from '../interface/rgbaObject';
 import type { RGB } from '../interface/rgb';
@@ -68,9 +69,11 @@ const inputToRGB = (input?: ColorInputTypes): RGBAObject => {
     }
     ({ r, g, b } = color as RGB);
     // RGB values now are all in [0, 100%|255] range
-    [r, g, b] = [r, g, b].map(n => bound01(n, isPercentage(n) ? 100 : 255));
-    rgb = { r, g, b };
+    // [r, g, b] = [r, g, b].map(n => bound01(n, isPercentage(n) ? 100 : 255));
+    // rgb = { r, g, b };
+    rgb = rgbToRgb(r, g, b);
     format = 'format' in color ? (color as RGBAObject).format : 'rgb';
+    // console.log(color, 'Color / rgbToRgb', rgb)
   }
   if (
     isColorType(color, { h: 0, s: 0, v: 0 }) &&
@@ -84,6 +87,7 @@ const inputToRGB = (input?: ColorInputTypes): RGBAObject => {
     v = bound01(v, 100); // brightness input can be `5%` or a [0, 100] value
     rgb = hsvToRgb(h, s, v); // outputs RGBa with [0-1] values
     format = 'hsv';
+    // console.log(color, 'hsvToRgb', rgb);
   }
   if (
     isColorType(color, { h: 0, s: 0, l: 0 }) &&
@@ -97,6 +101,7 @@ const inputToRGB = (input?: ColorInputTypes): RGBAObject => {
     l = bound01(l, 100); // lightness can be `5%` or a [0, 1] value
     rgb = hslToRgb(h, s, l); // outputs RGBa with [0-1] values
     format = 'hsl';
+    // console.log(color, 'hslToRgb', rgb);
   }
   if (
     isColorType(color, { h: 0, w: 0, b: 0 }) &&
@@ -111,6 +116,7 @@ const inputToRGB = (input?: ColorInputTypes): RGBAObject => {
     b = bound01(b, 100); // blackness input can be `5%` or a [0, 100] value
     rgb = hwbToRgb(h, w, b); // outputs RGBa with [0-1] values
     format = 'hwb';
+    // console.log(color, 'hwbToRgb', rgb);
   }
 
   if (isValidCSSUnit((color as RGBAObject).a)) {

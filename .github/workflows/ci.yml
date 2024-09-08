@@ -17,8 +17,7 @@ jobs:
           node-version: 20
           cache: pnpm
       - run: pnpm install --no-frozen-lockfile
-      - run: npx cypress install
-      - run: pnpm lint:ts
+      - run: pnpm lint
       - run: pnpm build
       - run: pnpm test
 

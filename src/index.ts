@@ -1,3 +1,4 @@
+'use strict';
 import nonColors from './util/nonColors';
 import roundPart from './util/roundPart';
 import webColors from './util/webColors';

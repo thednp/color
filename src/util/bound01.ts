@@ -1,39 +1,59 @@
 import isOnePointZero from './isOnePointZero';
 import isPercentage from './isPercentage';
+
+const EPSILON = 0.000001;
+const roundAroundEpsilon = (n: number, max: number) =>
+  Math.abs(n * max - max) < EPSILON ? 1 : n < EPSILON ? 0 : n;
+
 /**
- * Take input from [0, n] and return it as [0, 1]
+ * Take input from [0, 100|255|360] and return it as [0, 1]
+ * Values in [0, 1] range are no longer computed, but returned right away.
+ * The reason is https://github.com/thednp/solid-color-picker/issues/2
  */
-const bound01 = (N: string | number, max: number): number => {
-  let n = N;
+const bound01 = (input: string | number, max: number): number => {
+  // Numbers within [0, 1] range are returned
+  if (typeof input === 'number' && input <= 1 && input >= 0) {
+    return roundAroundEpsilon(input, max);
+  }
+
+  let n = input;
+  if (isOnePointZero(input)) n = '100%';
+  // console.log('isOnePointZero', n);
   const processPercent = isPercentage(n);
-
-  if (isOnePointZero(N)) n = '100%';
-
-  n =
-    max > 360
-      ? Number.parseFloat(n as string)
-      : Math.min(max, Math.max(0, Number.parseFloat(n as string)));
+  // console.log(input, 'isPercent', n);
 
   // Automatically convert percentage into number
-  if (processPercent) n = (n * max) / 100;
-
-  // Handle floating point rounding errors
-  // or maybe round values to 6 decimals Math.round(N * (10 ** 6)) / 10 ** 6
-  if (Math.abs(n - max) < 0.000001) {
-    return 1;
+  // OR values like 25deg to numbers
+  if (processPercent) {
+    return Number.parseFloat(n as string) / 100;
   }
+  n = typeof n !== 'number' ? Number.parseFloat(n) : n;
+  // console.log(input, 'parseFloat ', n);
+
   // Convert into [0, 1] range if it isn't already
   if (max === 360) {
+    // n = typeof n !== 'number' ? Number.parseFloat(n) : n;
     // If n is a hue given in degrees,
     // wrap around out-of-range values into [0, 360] range
     // then convert into [0, 1].
-    n = (n < 0 ? (n % max) + max : n % max) / max;
+    n = (n < 0 ? (n % max) + max : n > 360 ? n % max : n) / max;
+    // console.log(input, 'max=360', n)
   } else {
+    // Bound between 0 and max here
+    // console.log(input, 'max!=360.beforeClamp', n);
+    n = Math.min(max, Math.max(0, n));
+    // console.log(input, 'max!=360.afterClamp', n);
+
     // If n not a hue given in degrees
     // Convert into [0, 1] range if it isn't already.
-    n = (n % max) / max;
+    n = n / max;
+    // console.log(input, 'max!=360.afterConvert', n);
   }
-  return n;
+  // console.log('finalReturn', n);
+
+  // Handle floating point rounding errors
+  // maybe round values to 6 decimals Math.round(input * (10 ** 6)) / 10 ** 6
+  return roundAroundEpsilon(n, max);
 };
 
 export default bound01;
