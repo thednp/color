@@ -1,4 +1,4 @@
-import { RGB } from './rgb';
+import { RGB } from "./rgb";
 
 export interface RGBA extends RGB {
   a: number;

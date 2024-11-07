@@ -1,5 +1,6 @@
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
+import dts from "vite-plugin-dts";
 
 const NAME = 'Color';
 
@@ -16,6 +17,13 @@ export default defineConfig({
       "~": resolve(__dirname, "src"),
     },
   },
+  plugins: [
+    dts({
+      outDir: 'dist',
+      copyDtsFiles: true,
+      rollupTypes: true,
+    }),
+  ],
   build: {
     emptyOutDir: true,
     outDir: 'dist',

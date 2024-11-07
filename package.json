@@ -1,7 +1,7 @@
 {
   "name": "@thednp/color",
   "author": "thednp",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "🎨 Fast color conversion tool made in TypeScript",
   "keywords": [
     "color",
@@ -33,33 +33,24 @@
     "test": "pnpm pre-test && vitest",
     "test-ui": "pnpm pre-test && vitest --ui",
     "dev": "pnpx vite serve experiments --port 3000",
-    "badges": "npx -p dependency-version-badge update-badge typescript prettier vite vitest eslint",
-    "prepublishOnly": "npm update && pnpm up && pnpm format && pnpm lint && pnpm build && pnpm badges",
+    "badges": "npx -p dependency-version-badge update-badge typescript vite vitest",
+    "prepublishOnly": "pnpm up && pnpm format && pnpm lint && pnpm build && pnpm badges",
     "clean-coverage": "rm -rf coverage .nyc_output",
-    "format": "prettier --write \"src/**/*.ts\"",
+    "format": "deno fmt src",
     "lint": "pnpm lint:types && pnpm lint:ts",
-    "lint:ts": "eslint -c .eslintrc.cjs --ext .ts src",
+    "lint:ts": "deno lint src",
     "lint:types": "tsc --noEmit",
     "fix:ts": "eslint -c .eslintrc.cjs --ext .ts src --fix",
-    "build": "pnpm vite build && pnpm dts",
-    "dts": "dts-bundle-generator --config ./dts.config.ts"
+    "build": "pnpm vite build"
   },
   "devDependencies": {
-    "@types/node": "^22.5.4",
-    "@typescript-eslint/eslint-plugin": "^5.62.0",
-    "@typescript-eslint/parser": "^5.62.0",
-    "@vitest/coverage-istanbul": "^2.0.5",
-    "@vitest/ui": "^2.0.5",
-    "dts-bundle-generator": "^9.5.1",
-    "eslint": "^8.57.0",
-    "eslint-plugin-jsdoc": "^46.10.1",
-    "eslint-plugin-prefer-arrow": "^1.2.3",
-    "eslint-plugin-prettier": "^4.2.1",
-    "happy-dom": "^15.7.3",
-    "prettier": "^2.8.8",
-    "typescript": "^5.5.4",
-    "vite": "^5.4.3",
-    "vitest": "^2.0.5"
+    "@types/node": "^22.9.0",
+    "@vitest/coverage-istanbul": "^2.1.4",
+    "@vitest/ui": "^2.1.4",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10",
+    "vite-plugin-dts": "^4.3.0",
+    "vitest": "^2.1.4"
   },
   "packageManager": "pnpm@8.6.12"
 }

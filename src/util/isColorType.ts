@@ -6,7 +6,8 @@ const isColorType = <T extends Record<string, number | string>>(
   obj: unknown,
   inst: T,
 ): obj is T => {
-  return obj !== null && typeof obj === 'object' && Object.keys(inst).every(c => c in obj);
+  return obj !== null && typeof obj === "object" &&
+    Object.keys(inst).every((c) => c in obj);
 };
 
 export default isColorType;

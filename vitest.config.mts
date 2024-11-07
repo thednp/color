@@ -14,6 +14,5 @@ export default defineConfig({
       enabled: true,
       include: ["src/**/*"],
     },
-    environment: "happy-dom",
   },
 });

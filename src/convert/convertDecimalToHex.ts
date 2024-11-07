@@ -1,4 +1,4 @@
-import roundPart from '../util/roundPart';
+import roundPart from "../util/roundPart";
 
 /**
  * Converts a decimal value to hexadecimal.

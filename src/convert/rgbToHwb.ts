@@ -1,4 +1,4 @@
-import { HWB } from '../interface/hwb';
+import { HWB } from "../interface/hwb";
 
 /**
  * Returns an HWB colour object from an RGB colour object.

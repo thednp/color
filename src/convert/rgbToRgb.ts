@@ -1,5 +1,5 @@
-import bound01 from '../util/bound01';
-import type { RGB } from '../interface/rgb';
+import bound01 from "../util/bound01";
+import type { RGB } from "../interface/rgb";
 
 /**
  * Converts an RGB colour value to RGB.

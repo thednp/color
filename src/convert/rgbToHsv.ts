@@ -1,4 +1,4 @@
-import type { HSV } from '../interface/hsv';
+import type { HSV } from "../interface/hsv";
 
 /**
  * Converts an RGB colour value to HSV.

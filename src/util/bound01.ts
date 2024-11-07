@@ -1,5 +1,5 @@
-import isOnePointZero from './isOnePointZero';
-import isPercentage from './isPercentage';
+import isOnePointZero from "./isOnePointZero";
+import isPercentage from "./isPercentage";
 
 const EPSILON = 0.000001;
 const roundAroundEpsilon = (n: number, max: number) =>
@@ -17,7 +17,7 @@ const bound01 = (input: string | number, max: number): number => {
   // }
 
   let n = input;
-  if (isOnePointZero(input)) n = '100%';
+  if (isOnePointZero(input)) n = "100%";
   // console.log('isOnePointZero', n);
   const processPercent = isPercentage(n);
   // console.log(input, 'isPercent', n);
@@ -27,7 +27,7 @@ const bound01 = (input: string | number, max: number): number => {
   if (processPercent) {
     return Number.parseFloat(n as string) / 100;
   }
-  n = typeof n !== 'number' ? Number.parseFloat(n) : n;
+  n = typeof n !== "number" ? Number.parseFloat(n) : n;
   // console.log(input, 'parseFloat ', n);
 
   // Convert into [0, 1] range if it isn't already

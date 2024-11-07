@@ -1,4 +1,4 @@
-import { RGBA } from './rgba';
+import { RGBA } from "./rgba";
 
 export interface RGBAObject extends RGBA {
   ok: boolean;

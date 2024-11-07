@@ -1,5 +1,5 @@
-import pad2 from '../util/pad2';
-import roundPart from '../util/roundPart';
+import pad2 from "../util/pad2";
+import roundPart from "../util/roundPart";
 
 /**
  * Converts an RGB colour to hex
@@ -7,7 +7,12 @@ import roundPart from '../util/roundPart';
  * Assumes r, g, and b are contained in the set [0, 255]
  * Returns a 3 or 6 character hex
  */
-const rgbToHex = (r: number, g: number, b: number, allow3Char?: boolean): string => {
+const rgbToHex = (
+  r: number,
+  g: number,
+  b: number,
+  allow3Char?: boolean,
+): string => {
   const hex = [
     pad2(roundPart(r).toString(16)),
     pad2(roundPart(g).toString(16)),
@@ -24,7 +29,7 @@ const rgbToHex = (r: number, g: number, b: number, allow3Char?: boolean): string
     return hex[0].charAt(0) + hex[1].charAt(0) + hex[2].charAt(0);
   }
 
-  return hex.join('');
+  return hex.join("");
 };
 
 export default rgbToHex;

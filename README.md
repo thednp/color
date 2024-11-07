@@ -5,11 +5,9 @@
 [![NPM Version](https://img.shields.io/npm/v/@thednp/color.svg)](https://www.npmjs.com/package/@thednp/color)
 [![NPM Downloads](https://img.shields.io/npm/dm/@thednp/color.svg)](http://npm-stat.com/charts.html?package=@thednp/color)
 [![jsDeliver](https://img.shields.io/jsdelivr/npm/hw/@thednp/color)](https://www.jsdelivr.com/package/npm/@thednp/color)
-[![typescript version](https://img.shields.io/badge/typescript-5.5.4-brightgreen)](https://www.typescriptlang.org/)
-[![eslint version](https://img.shields.io/badge/eslint-8.57.0-brightgreen)](https://github.com/eslint)
-[![prettier version](https://img.shields.io/badge/prettier-2.8.8-brightgreen)](https://prettier.io/)
-[![vitest version](https://img.shields.io/badge/vitest-2.0.5-brightgreen)](https://vitest.dev/)
-[![vite version](https://img.shields.io/badge/vite-5.4.3-brightgreen)](https://github.com/vitejs)
+[![typescript version](https://img.shields.io/badge/typescript-5.6.3-brightgreen)](https://www.typescriptlang.org/)
+[![vitest version](https://img.shields.io/badge/vitest-2.1.4-brightgreen)](https://vitest.dev/)
+[![vite version](https://img.shields.io/badge/vite-5.4.10-brightgreen)](https://github.com/vitejs)
 
 A TypeScript flavored fork of the excelent [TinyColor](https://github.com/bgrins/TinyColor) optimized for [ColorPicker](https://github.com/thednp/color-picker) with new features and improvements:
 

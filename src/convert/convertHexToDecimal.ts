@@ -1,4 +1,4 @@
-import parseIntFromHex from './parseIntFromHex';
+import parseIntFromHex from "./parseIntFromHex";
 
 /**
  * Converts a hexadecimal value to decimal.

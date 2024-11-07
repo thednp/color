@@ -1,5 +1,5 @@
-import hslToRgb from './hslToRgb';
-import type { RGB } from '../interface/rgb';
+import hslToRgb from "./hslToRgb";
+import type { RGB } from "../interface/rgb";
 
 /**
  * Returns an RGB colour object from an HWB colour.
@@ -13,7 +13,7 @@ const hwbToRgb = (H: number, W: number, B: number): RGB => {
     return { r: gray, g: gray, b: gray };
   }
   let { r, g, b } = hslToRgb(H, 1, 0.5);
-  [r, g, b] = [r, g, b].map(v => v * (1 - W - B) + W);
+  [r, g, b] = [r, g, b].map((v) => v * (1 - W - B) + W);
 
   return { r, g, b };
 };

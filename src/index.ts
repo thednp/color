@@ -1,43 +1,43 @@
-'use strict';
-import nonColors from './util/nonColors';
-import roundPart from './util/roundPart';
-import webColors from './util/webColors';
-import matchers from './util/matchers';
-import isNonColor from './util/isNonColor';
-import isColorType from './util/isColorType';
-import isOnePointZero from './util/isOnePointZero';
-import isPercentage from './util/isPercentage';
-import isValidCSSUnit from './util/isValidCSSUnit';
-import isColorName from './util/isColorName';
-import bound01 from './util/bound01';
-import boundAlpha from './util/boundAlpha';
-import clamp01 from './util/clamp01';
-import pad2 from './util/pad2';
-import COLOR_FORMAT from './util/colorFormat';
-import getRGBFromName from './util/getRGBFromName';
-import convertHexToDecimal from './convert/convertHexToDecimal';
-import convertDecimalToHex from './convert/convertDecimalToHex';
-import parseIntFromHex from './convert/parseIntFromHex';
-import ColorFormats from './util/colorFormats';
-import ColorInputTypes from './util/colorInputTypes';
-import rgbToHsl from './convert/rgbToHsl';
-import hueToRgb from './convert/hueToRgb';
-import hslToRgb from './convert/hslToRgb';
-import rgbToHwb from './convert/rgbToHwb';
-import hwbToRgb from './convert/hwbToRgb';
-import rgbToHsv from './convert/rgbToHsv';
-import hsvToRgb from './convert/hsvToRgb';
-import rgbToHex from './convert/rgbToHex';
-import rgbaToHex from './convert/rgbaToHex';
-import stringInputToObject from './util/stringInputToObject';
-import inputToRGB from './util/inputToRgb';
+"use strict";
+import nonColors from "./util/nonColors";
+import roundPart from "./util/roundPart";
+import webColors from "./util/webColors";
+import matchers from "./util/matchers";
+import isNonColor from "./util/isNonColor";
+import isColorType from "./util/isColorType";
+import isOnePointZero from "./util/isOnePointZero";
+import isPercentage from "./util/isPercentage";
+import isValidCSSUnit from "./util/isValidCSSUnit";
+import isColorName from "./util/isColorName";
+import bound01 from "./util/bound01";
+import boundAlpha from "./util/boundAlpha";
+import clamp01 from "./util/clamp01";
+import pad2 from "./util/pad2";
+import COLOR_FORMAT from "./util/colorFormat";
+import getRGBFromName from "./util/getRGBFromName";
+import convertHexToDecimal from "./convert/convertHexToDecimal";
+import convertDecimalToHex from "./convert/convertDecimalToHex";
+import parseIntFromHex from "./convert/parseIntFromHex";
+import ColorFormats from "./util/colorFormats";
+import ColorInputTypes from "./util/colorInputTypes";
+import rgbToHsl from "./convert/rgbToHsl";
+import hueToRgb from "./convert/hueToRgb";
+import hslToRgb from "./convert/hslToRgb";
+import rgbToHwb from "./convert/rgbToHwb";
+import hwbToRgb from "./convert/hwbToRgb";
+import rgbToHsv from "./convert/rgbToHsv";
+import hsvToRgb from "./convert/hsvToRgb";
+import rgbToHex from "./convert/rgbToHex";
+import rgbaToHex from "./convert/rgbaToHex";
+import stringInputToObject from "./util/stringInputToObject";
+import inputToRGB from "./util/inputToRgb";
 
-import type { RGBA } from './interface/rgba';
-import type { HSLA } from './interface/hsla';
-import type { HSVA } from './interface/hsva';
-import type { HWBA } from './interface/hwba';
+import type { RGBA } from "./interface/rgba";
+import type { HSLA } from "./interface/hsla";
+import type { HSVA } from "./interface/hsva";
+import type { HWBA } from "./interface/hwba";
 
-import { version } from '../package.json';
+import { version } from "../package.json";
 
 /**
  * Returns a new `Color` instance.
@@ -88,7 +88,7 @@ export default class Color {
 
   // main public methods
   constructor(input?: ColorInputTypes | Partial<Color>, config?: ColorFormats) {
-    const configFormat = config && COLOR_FORMAT.includes(config) ? config : '';
+    const configFormat = config && COLOR_FORMAT.includes(config) ? config : "";
 
     // If input is already a `Color` or compatible object, clone its values
     const { r, g, b, a, ok, format } = inputToRGB(input);
@@ -162,7 +162,8 @@ export default class Color {
       .map(([name, rgb]): [string, number] => {
         const distance =
           // ((rgb.r - r) ** 2 + (rgb.g - g) ** 2 + (rgb.b - b) ** 2) ** 0.5; // standard
-          (((rgb.r - r) * 0.3) ** 2 + ((rgb.g - g) * 0.6) ** 2 + ((rgb.b - b) * 0.1) ** 2) ** 0.5; // perceived
+          (((rgb.r - r) * 0.3) ** 2 + ((rgb.g - g) * 0.6) ** 2 +
+            ((rgb.b - b) * 0.1) ** 2) ** 0.5; // perceived
         return [name, distance];
       })
       .find(([, distance], _, ar) => {
@@ -178,7 +179,7 @@ export default class Color {
   toRgb(): RGBA {
     let { r, g, b, a } = this;
 
-    [r, g, b] = [r, g, b].map(n => roundPart(n * 255 * 100) / 100);
+    [r, g, b] = [r, g, b].map((n) => roundPart(n * 255 * 100) / 100);
     a = roundPart(a * 100) / 100;
     return {
       r,
@@ -208,7 +209,7 @@ export default class Color {
   toRgbCSS4String(): string {
     const { r, g, b, a } = this.toRgb();
     const [R, G, B] = [r, g, b].map(roundPart);
-    const A = a === 1 ? '' : ` / ${roundPart(a * 100)}%`;
+    const A = a === 1 ? "" : ` / ${roundPart(a * 100)}%`;
 
     return `rgb(${R} ${G} ${B}${A})`;
   }
@@ -220,10 +221,12 @@ export default class Color {
   toHex(allow3Char?: boolean | undefined): string {
     let { r, g, b, a } = this;
 
-    [r, g, b] = [r, g, b].map(n => roundPart(n * 255));
+    [r, g, b] = [r, g, b].map((n) => roundPart(n * 255));
     a = roundPart(a * 100) / 100;
 
-    return a === 1 ? rgbToHex(r, g, b, allow3Char) : rgbaToHex(r, g, b, a, allow3Char);
+    return a === 1
+      ? rgbToHex(r, g, b, allow3Char)
+      : rgbaToHex(r, g, b, a, allow3Char);
   }
 
   /**
@@ -240,10 +243,12 @@ export default class Color {
   toHex8(allow4Char?: boolean | undefined): string {
     let { r, g, b, a } = this;
 
-    [r, g, b] = [r, g, b].map(n => roundPart(n * 255));
+    [r, g, b] = [r, g, b].map((n) => roundPart(n * 255));
     a = roundPart(a * 100) / 100;
 
-    return a === 1 ? rgbToHex(r, g, b, allow4Char) : rgbaToHex(r, g, b, a, allow4Char);
+    return a === 1
+      ? rgbToHex(r, g, b, allow4Char)
+      : rgbaToHex(r, g, b, a, allow4Char);
   }
 
   /**
@@ -295,7 +300,9 @@ export default class Color {
     l = roundPart(l * 100);
     a = roundPart(a * 100) / 100;
 
-    return a === 1 ? `hsl(${h}, ${s}%, ${l}%)` : `hsla(${h}, ${s}%, ${l}%, ${a})`;
+    return a === 1
+      ? `hsl(${h}, ${s}%, ${l}%)`
+      : `hsla(${h}, ${s}%, ${l}%, ${a})`;
   }
 
   /**
@@ -309,7 +316,7 @@ export default class Color {
     s = roundPart(s * 100);
     l = roundPart(l * 100);
     a = roundPart(a * 100);
-    const A = a < 100 ? ` / ${roundPart(a)}%` : '';
+    const A = a < 100 ? ` / ${roundPart(a)}%` : "";
 
     return `hsl(${h}deg ${s}% ${l}%${A})`;
   }
@@ -337,7 +344,7 @@ export default class Color {
     w = roundPart(w * 100);
     b = roundPart(b * 100);
     a = roundPart(a * 100);
-    const A = a < 100 ? ` / ${roundPart(a)}%` : '';
+    const A = a < 100 ? ` / ${roundPart(a)}%` : "";
 
     return `hwb(${h}deg ${w}% ${b}%${A})`;
   }
@@ -346,7 +353,7 @@ export default class Color {
    * Sets the alpha value of the current colour.
    */
   setAlpha(alpha?: number): Color {
-    if (typeof alpha !== 'number') return this;
+    if (typeof alpha !== "number") return this;
     this.a = boundAlpha(alpha);
     return this;
   }
@@ -355,7 +362,7 @@ export default class Color {
    * Saturate the colour with a given amount.
    */
   saturate(amount?: number): Color {
-    if (typeof amount !== 'number') return this;
+    if (typeof amount !== "number") return this;
     const { h, s, l } = this.toHsl();
     const { r, g, b } = hslToRgb(h, clamp01(s + amount / 100), l);
 
@@ -367,7 +374,7 @@ export default class Color {
    * Desaturate the colour with a given amount.
    */
   desaturate(amount?: number): Color {
-    return typeof amount === 'number' ? this.saturate(-amount) : this;
+    return typeof amount === "number" ? this.saturate(-amount) : this;
   }
 
   /**
@@ -382,7 +389,7 @@ export default class Color {
    * Increase the colour lightness with a given amount.
    */
   lighten(amount?: number): Color {
-    if (typeof amount !== 'number') return this;
+    if (typeof amount !== "number") return this;
 
     const { h, s, l } = this.toHsl();
     const { r, g, b } = hslToRgb(h, s, clamp01(l + amount / 100));
@@ -395,7 +402,7 @@ export default class Color {
    * Decrease the colour lightness with a given amount.
    */
   darken(amount?: number): Color {
-    return typeof amount === 'number' ? this.lighten(-amount) : this;
+    return typeof amount === "number" ? this.lighten(-amount) : this;
   }
 
   /**
@@ -403,10 +410,14 @@ export default class Color {
    * Values outside of this range will be wrapped into this range.
    */
   spin(amount?: number): Color {
-    if (typeof amount !== 'number') return this;
+    if (typeof amount !== "number") return this;
 
     const { h, s, l } = this.toHsl();
-    const { r, g, b } = hslToRgb(clamp01(((h * 360 + amount) % 360) / 360), s, l);
+    const { r, g, b } = hslToRgb(
+      clamp01(((h * 360 + amount) % 360) / 360),
+      s,
+      l,
+    );
 
     Object.assign(this, { r, g, b });
     return this;
@@ -423,9 +434,9 @@ export default class Color {
   toString(allowShort?: boolean | undefined): string {
     const { format } = this;
 
-    if (format === 'hex') return this.toHexString(allowShort);
-    if (format === 'hsl') return this.toHslString();
-    if (format === 'hwb') return this.toHwbString();
+    if (format === "hex") return this.toHexString(allowShort);
+    if (format === "hsl") return this.toHslString();
+    if (format === "hwb") return this.toHwbString();
 
     return this.toRgbString();
   }

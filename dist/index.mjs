@@ -1,4 +1,10 @@
-const I = ["transparent", "currentColor", "inherit", "revert", "initial"], i = (o) => {
+const I = [
+  "transparent",
+  "currentColor",
+  "inherit",
+  "revert",
+  "initial"
+], i = (o) => {
   const t = Math.floor(o);
   return o - t < 0.5 ? t : Math.round(o);
 }, T = [
@@ -1374,7 +1380,7 @@ const I = ["transparent", "currentColor", "inherit", "revert", "initial"], i = (
     format: m,
     ok: k
   };
-}, gr = "1.0.11";
+}, gr = "1.0.12";
 class rr {
   // bring main utilities to front
   static matchers = f;
@@ -1632,7 +1638,11 @@ class rr {
    */
   spin(t) {
     if (typeof t != "number") return this;
-    const { h: r, s: e, l: s } = this.toHsl(), { r: n, g, b: a } = S(A((r * 360 + t) % 360 / 360), e, s);
+    const { h: r, s: e, l: s } = this.toHsl(), { r: n, g, b: a } = S(
+      A((r * 360 + t) % 360 / 360),
+      e,
+      s
+    );
     return Object.assign(this, { r: n, g, b: a }), this;
   }
   /** Returns a clone of the current `Color` instance. */

@@ -1,4 +1,3 @@
-// @vitest-environment happy-dom
 import { expect, test } from "vitest";
 import Color from "~/index";
 import roundPart from "~/util/roundPart";
