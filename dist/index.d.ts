@@ -185,7 +185,7 @@ export declare type ColorFormats = string | "rgb" | "hex" | "hex3" | "hex4" | "h
 
 export declare type ColorInputTypes = string | Partial<RGBALike | HSVALike | HSLALike | HWBALike>;
 
-declare interface HSL {
+export declare interface HSL {
     h: number;
     s: number;
     l: number;
@@ -204,13 +204,13 @@ declare interface HSLALike {
     ok: boolean;
 }
 
-declare interface HSV {
+export declare interface HSV {
     h: number;
     s: number;
     v: number;
 }
 
-declare interface HSVA extends HSV {
+export declare interface HSVA extends HSV {
     a: number;
 }
 
@@ -224,7 +224,7 @@ declare interface HSVALike {
     ok: boolean;
 }
 
-declare interface HWB {
+export declare interface HWB {
     h: number;
     w: number;
     b: number;
@@ -244,7 +244,7 @@ declare interface HWBALike {
     ok: boolean;
 }
 
-declare interface RGB {
+export declare interface RGB {
     r: number;
     g: number;
     b: number;

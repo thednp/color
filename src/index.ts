@@ -32,14 +32,29 @@ import inputToRGB from "./util/inputToRgb";
 
 import type ColorFormats from "./util/colorFormats";
 import type ColorInputTypes from "./util/colorInputTypes";
+import type { RGB } from "./interface/rgb";
 import type { RGBA } from "./interface/rgba";
+import type { HSL } from "./interface/hsl";
 import type { HSLA } from "./interface/hsla";
+import type { HSV } from "./interface/hsv";
 import type { HSVA } from "./interface/hsva";
+import type { HWB } from "./interface/hwb";
 import type { HWBA } from "./interface/hwba";
 
 import { version } from "../package.json";
 
-export type { ColorFormats, ColorInputTypes, HSLA, HWBA, RGBA };
+export type {
+  ColorFormats,
+  ColorInputTypes,
+  HSL,
+  HSLA,
+  HSV,
+  HSVA,
+  HWB,
+  HWBA,
+  RGB,
+  RGBA,
+};
 
 /**
  * Returns a new `Color` instance.
