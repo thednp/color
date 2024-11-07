@@ -18,8 +18,6 @@ import getRGBFromName from "./util/getRGBFromName";
 import convertHexToDecimal from "./convert/convertHexToDecimal";
 import convertDecimalToHex from "./convert/convertDecimalToHex";
 import parseIntFromHex from "./convert/parseIntFromHex";
-import ColorFormats from "./util/colorFormats";
-import ColorInputTypes from "./util/colorInputTypes";
 import rgbToHsl from "./convert/rgbToHsl";
 import hueToRgb from "./convert/hueToRgb";
 import hslToRgb from "./convert/hslToRgb";
@@ -32,12 +30,16 @@ import rgbaToHex from "./convert/rgbaToHex";
 import stringInputToObject from "./util/stringInputToObject";
 import inputToRGB from "./util/inputToRgb";
 
+import type ColorFormats from "./util/colorFormats";
+import type ColorInputTypes from "./util/colorInputTypes";
 import type { RGBA } from "./interface/rgba";
 import type { HSLA } from "./interface/hsla";
 import type { HSVA } from "./interface/hsva";
 import type { HWBA } from "./interface/hwba";
 
 import { version } from "../package.json";
+
+export type { ColorFormats, ColorInputTypes, HSLA, HWBA, RGBA };
 
 /**
  * Returns a new `Color` instance.

@@ -181,9 +181,9 @@ declare class Color {
 }
 export default Color;
 
-declare type ColorFormats = string | "rgb" | "hex" | "hex3" | "hex4" | "hex6" | "hex8" | "hsl" | "hsv" | "hwb";
+export declare type ColorFormats = string | "rgb" | "hex" | "hex3" | "hex4" | "hex6" | "hex8" | "hsl" | "hsv" | "hwb";
 
-declare type ColorInputTypes = string | Partial<RGBALike | HSVALike | HSLALike | HWBALike>;
+export declare type ColorInputTypes = string | Partial<RGBALike | HSVALike | HSLALike | HWBALike>;
 
 declare interface HSL {
     h: number;
@@ -191,7 +191,7 @@ declare interface HSL {
     l: number;
 }
 
-declare interface HSLA extends HSL {
+export declare interface HSLA extends HSL {
     a: number;
 }
 
@@ -230,7 +230,7 @@ declare interface HWB {
     b: number;
 }
 
-declare interface HWBA extends HWB {
+export declare interface HWBA extends HWB {
     a: number;
 }
 
@@ -250,7 +250,7 @@ declare interface RGB {
     b: number;
 }
 
-declare interface RGBA extends RGB {
+export declare interface RGBA extends RGB {
     a: number;
 }
 
