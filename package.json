@@ -40,7 +40,7 @@
     "lint": "pnpm lint:types && pnpm lint:ts",
     "lint:ts": "deno lint src",
     "lint:types": "tsc --noEmit",
-    "fix:ts": "eslint -c .eslintrc.cjs --ext .ts src --fix",
+    "fix:ts": "deno lint src --fix",
     "build": "pnpm vite build"
   },
   "devDependencies": {
