@@ -195,7 +195,7 @@ export declare interface HSLA extends HSL {
     a: number;
 }
 
-declare interface HSLALike {
+export declare interface HSLALike {
     h: number | string;
     s: number | string;
     l: number | string;
@@ -215,7 +215,7 @@ export declare interface HSVA extends HSV {
 }
 
 /** An HSVA object, with all values in the range 0-1 */
-declare interface HSVALike {
+export declare interface HSVALike {
     h: number | string;
     s: number | string;
     v: number | string;
@@ -235,7 +235,7 @@ export declare interface HWBA extends HWB {
 }
 
 /** An HWBA object, with all values in the range 0-1 */
-declare interface HWBALike {
+export declare interface HWBALike {
     h: number | string;
     w: number | string;
     b: number | string;
@@ -255,7 +255,7 @@ export declare interface RGBA extends RGB {
 }
 
 /** An RGBA object, with all values in the range 0-1 */
-declare interface RGBALike {
+export declare interface RGBALike {
     r: number | string;
     g: number | string;
     b: number | string;
@@ -264,7 +264,7 @@ declare interface RGBALike {
     ok: boolean;
 }
 
-declare interface RGBAObject extends RGBA {
+export declare interface RGBAObject extends RGBA {
     ok: boolean;
     format: string;
 }

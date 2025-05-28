@@ -20,7 +20,7 @@ export default defineConfig({
   plugins: [
     dts({
       outDir: 'dist',
-      copyDtsFiles: true,
+      // copyDtsFiles: true,
       rollupTypes: true,
     }),
   ],

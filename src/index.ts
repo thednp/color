@@ -40,6 +40,11 @@ import type { HSV } from "./interface/hsv";
 import type { HSVA } from "./interface/hsva";
 import type { HWB } from "./interface/hwb";
 import type { HWBA } from "./interface/hwba";
+import { HSLALike } from './interface/hslaLike';
+import { HSVALike } from './interface/hsvaLike';
+import { HWBALike } from './interface/hwbaLike';
+import { RGBALike } from './interface/rgbaLike';
+import { RGBAObject } from './interface/rgbaObject';
 
 import { version } from "../package.json";
 
@@ -48,12 +53,17 @@ export type {
   ColorInputTypes,
   HSL,
   HSLA,
+  HSLALike,
   HSV,
   HSVA,
+  HSVALike,
   HWB,
   HWBA,
+  HWBALike,
   RGB,
   RGBA,
+  RGBALike,
+  RGBAObject,
 };
 
 /**
