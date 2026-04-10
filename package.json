@@ -1,7 +1,7 @@
 {
   "name": "@thednp/color",
   "author": "thednp",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "🎨 Fast color conversion tool made in TypeScript",
   "keywords": [
     "color",
@@ -33,8 +33,7 @@
     "test": "pnpm pre-test && vitest",
     "test-ui": "pnpm pre-test && vitest --ui",
     "dev": "pnpx vite serve experiments --port 3000",
-    "badges": "npx -p dependency-version-badge update-badge typescript vite vitest",
-    "prepublishOnly": "pnpm up --latest && pnpm format && pnpm lint && pnpm build && pnpm badges",
+    "prepublishOnly": "pnpm up --latest && pnpm format && pnpm lint && pnpm build",
     "clean-coverage": "rm -rf coverage .nyc_output",
     "format": "deno fmt src",
     "lint": "pnpm lint:types && pnpm lint:ts",
@@ -44,13 +43,13 @@
     "build": "pnpm vite build"
   },
   "devDependencies": {
-    "@types/node": "^22.15.23",
-    "@vitest/coverage-istanbul": "^3.1.4",
-    "@vitest/ui": "^3.1.4",
-    "typescript": "^5.8.3",
-    "vite": "^6.3.5",
+    "@types/node": "^22.19.17",
+    "@vitest/coverage-istanbul": "^3.2.4",
+    "@vitest/ui": "^3.2.4",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.2",
     "vite-plugin-dts": "^4.5.4",
-    "vitest": "^3.1.4"
+    "vitest": "^3.2.4"
   },
   "packageManager": "pnpm@8.6.12"
 }
