@@ -1,7 +1,7 @@
-import { HSLALike } from "../interface/hslaLike";
-import { HSVALike } from "../interface/hsvaLike";
-import { HWBALike } from "../interface/hwbaLike";
-import { RGBALike } from "../interface/rgbaLike";
+import { HSLALike } from "../interface/hslaLike.ts";
+import { HSVALike } from "../interface/hsvaLike.ts";
+import { HWBALike } from "../interface/hwbaLike.ts";
+import { RGBALike } from "../interface/rgbaLike.ts";
 
 type ColorInputTypes =
   | string

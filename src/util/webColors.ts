@@ -1,4 +1,4 @@
-import type { RGB } from "../interface/rgb";
+import type { RGB } from "../interface/rgb.ts";
 
 /**
  * 148 Web Colors

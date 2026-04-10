@@ -1,6 +1,6 @@
-import nonColors from "./nonColors";
-import COLOR_FORMAT from "./colorFormat";
-import webColors from "./webColors";
+import nonColors from "./nonColors.ts";
+import COLOR_FORMAT from "./colorFormat.ts";
+import webColors from "./webColors.ts";
 
 type NonColor =
   | "transparent"

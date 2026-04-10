@@ -1,4 +1,4 @@
-import type { HSL } from "../interface/hsl";
+import type { HSL } from "../interface/hsl.ts";
 
 /**
  * Converts an RGB colour value to HSL.

@@ -1,5 +1,5 @@
-import hslToRgb from "./hslToRgb";
-import type { RGB } from "../interface/rgb";
+import hslToRgb from "./hslToRgb.ts";
+import type { RGB } from "../interface/rgb.ts";
 
 /**
  * Returns an RGB colour object from an HWB colour.

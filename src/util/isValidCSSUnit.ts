@@ -1,4 +1,4 @@
-import matchers from "./matchers";
+import matchers from "./matchers.ts";
 
 /**
  * Check to see if it looks like a CSS unit

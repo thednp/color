@@ -1,14 +1,14 @@
-import isColorName from "./isColorName";
-import isNonColor from "./isNonColor";
-import getRGBFromName from "./getRGBFromName";
-import matchers from "./matchers";
-import parseIntFromHex from "../convert/parseIntFromHex";
-import convertHexToDecimal from "../convert/convertHexToDecimal";
+import isColorName from "./isColorName.ts";
+import isNonColor from "./isNonColor.ts";
+import getRGBFromName from "./getRGBFromName.ts";
+import matchers from "./matchers.ts";
+import parseIntFromHex from "../convert/parseIntFromHex.ts";
+import convertHexToDecimal from "../convert/convertHexToDecimal.ts";
 
-import type { RGBALike } from "../interface/rgbaLike";
-import type { HSLALike } from "../interface/hslaLike";
-import type { HWBALike } from "../interface/hwbaLike";
-import type { HSVALike } from "../interface/hsvaLike";
+import type { RGBALike } from "../interface/rgbaLike.ts";
+import type { HSLALike } from "../interface/hslaLike.ts";
+import type { HWBALike } from "../interface/hwbaLike.ts";
+import type { HSVALike } from "../interface/hsvaLike.ts";
 
 /**
  * Permissive string parsing. Take in a number of formats, and output an object

@@ -1,5 +1,5 @@
-import isOnePointZero from "./isOnePointZero";
-import isPercentage from "./isPercentage";
+import isOnePointZero from "./isOnePointZero.ts";
+import isPercentage from "./isPercentage.ts";
 
 const EPSILON = 0.000001;
 const roundAroundEpsilon = (n: number, max: number) =>

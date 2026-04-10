@@ -3,8 +3,6 @@
  "compilerOptions": {
    "lib": ["DOM", "ESNext", "DOM.Iterable"],
   //  "types": ["vite", "vite/client", "cypress"],
-   "rootDir": "./",
-   "baseUrl": "./",
    "module": "ESNext",
    "target": "ESNext",
    "moduleResolution": "Bundler",
@@ -20,6 +18,7 @@
    "noUnusedParameters": true,
    "noImplicitReturns": true,
    "removeComments": false,
+   "allowImportingTsExtensions": true,
    "allowSyntheticDefaultImports": true,
    "noEmit": true,
    "checkJs": true,

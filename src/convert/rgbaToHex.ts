@@ -1,6 +1,6 @@
-import pad2 from "../util/pad2";
-import roundPart from "../util/roundPart";
-import convertDecimalToHex from "./convertDecimalToHex";
+import pad2 from "../util/pad2.ts";
+import roundPart from "../util/roundPart.ts";
+import convertDecimalToHex from "./convertDecimalToHex.ts";
 
 /**
  * Converts an RGBA color plus alpha transparency to hex8.

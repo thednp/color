@@ -1,6 +1,6 @@
-import webColors from "./webColors";
+import webColors from "./webColors.ts";
 
-import type { RGB } from "../interface/rgb";
+import type { RGB } from "../interface/rgb.ts";
 
 /**
  * Returns the RGB value of a web safe colour.

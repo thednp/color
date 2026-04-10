@@ -1,5 +1,5 @@
-import hueToRgb from "./hueToRgb";
-import type { RGB } from "../interface/rgb";
+import hueToRgb from "./hueToRgb.ts";
+import type { RGB } from "../interface/rgb.ts";
 
 /**
  * Converts an HSL colour value to RGB.

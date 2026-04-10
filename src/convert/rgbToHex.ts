@@ -1,5 +1,5 @@
-import pad2 from "../util/pad2";
-import roundPart from "../util/roundPart";
+import pad2 from "../util/pad2.ts";
+import roundPart from "../util/roundPart.ts";
 
 /**
  * Converts an RGB colour to hex

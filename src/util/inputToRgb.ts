@@ -1,17 +1,17 @@
-import ColorInputTypes from "./colorInputTypes";
-import stringInputToObject from "./stringInputToObject";
-import isColorType from "./isColorType";
-import isValidCSSUnit from "./isValidCSSUnit";
-import isPercentage from "./isPercentage";
-import bound01 from "./bound01";
-import boundAlpha from "./boundAlpha";
-import hsvToRgb from "../convert/hsvToRgb";
-import hslToRgb from "../convert/hslToRgb";
-import hwbToRgb from "../convert/hwbToRgb";
-import rgbToRgb from "../convert/rgbToRgb";
+import ColorInputTypes from "./colorInputTypes.ts";
+import stringInputToObject from "./stringInputToObject.ts";
+import isColorType from "./isColorType.ts";
+import isValidCSSUnit from "./isValidCSSUnit.ts";
+import isPercentage from "./isPercentage.ts";
+import bound01 from "./bound01.ts";
+import boundAlpha from "./boundAlpha.ts";
+import hsvToRgb from "../convert/hsvToRgb.ts";
+import hslToRgb from "../convert/hslToRgb.ts";
+import hwbToRgb from "../convert/hwbToRgb.ts";
+import rgbToRgb from "../convert/rgbToRgb.ts";
 
-import type { RGBAObject } from "../interface/rgbaObject";
-import type { RGB } from "../interface/rgb";
+import type { RGBAObject } from "../interface/rgbaObject.ts";
+import type { RGB } from "../interface/rgb.ts";
 
 /**
  * Given a string or object, convert that input to RGB

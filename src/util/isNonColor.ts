@@ -1,4 +1,4 @@
-import nonColors from "./nonColors";
+import nonColors from "./nonColors.ts";
 
 /**
  * Check if a text is a valid CSS non-color value.

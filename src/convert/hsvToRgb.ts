@@ -1,4 +1,4 @@
-import { RGB } from "../interface/rgb";
+import { RGB } from "../interface/rgb.ts";
 
 /**
  * Converts an HSV colour value to RGB.
